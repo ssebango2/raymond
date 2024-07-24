@@ -3,11 +3,13 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <div className="flex flex-row bg-gradient-to-r from-violet-500 to-fuchsia-500">
-      <div className="flex items-center">
-        <Link href={'/'}>Vote for Raymond</Link>
+    <nav className="bg-blue-900 p-4 shadow-lg">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-white text-2xl font-bold">
+          <Link href="/">Vote for Raymond</Link>
+        </div>
+        <NavLinks />
       </div>
-      <NavLinks />
-    </div>
+    </nav>
   );
 }
