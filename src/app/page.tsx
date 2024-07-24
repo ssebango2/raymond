@@ -10,9 +10,8 @@ export default function Page() {
     <main className="flex min-h-screen flex-col items-center justify-center p-6" style={{ backgroundColor: '#EFE8DC' }}>   
        {/* Header Section */}
       <div className="w-full text-center mb-8">
-        <h1 className="text-blue-900 text-9xl font-bold">ABOUT</h1>
         <div className="bg-red-600 text-white text-6xl font-bold py-2 mt-4 inline-block px-8">
-          RAYMOND LIU
+          CAMPAIGN POLICIES
         </div>
       </div>
       
@@ -24,16 +23,10 @@ export default function Page() {
       >
         <div className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-md text-left border-4 border-blue-900">
           <p className="text-gray-600 text-3xl font-bold mb-4">
-            Raymond Liu was born and raised in the Bay Area, completing his K-12 
-            education in public schools right here in the Bay. Like many others, 
-            he found the cost of a 4-year university daunting, and he instead 
-            went to his local community college, Ohlone College. 
-            
-            He graduated with 3 Associate of Science degrees in Math, Natural Sciences 
-            and Computer Science. In 2017 he transferred to UC Davis, to complete his 
-            Bachelors of Science in Computer Science. He graduated in the spring of 2019, 
-            and since then, he’s worked as an Engineer at various companies before deciding to run 
-              for office in order to give back to the community who has helped him.
+          As the only private citizen running for District 10, Raymond Liu offers a unique perspective that isn’t 
+          bogged down in corruption or special interests.
+          He has pledged to not accept a single penny from any special interest groups and is proud to announce that 
+          he is solely funded entirely through small donors who live and reside in District 10.
               </p>
           <p className="text-gray-800 text-lg">
             For more information, visit <Link href="raymondliucampaign.com" legacyBehavior><a className="text-blue-600 underline">www.reallygreatsite.com</a></Link>.
