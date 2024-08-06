@@ -2,65 +2,183 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
-export default function Page() {
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 0; /* Remove padding */
+`;
+
+const Header = styled.header`
+  width: 100%;
+  height: 300px; /* Set the desired height */
+  background-image: url('/wasdc-modified.jpg'); 
+  background-size: cover;
+  background-position: center; /* Align the image to the center */
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  margin: 0; /* Ensure no extra margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const HeaderText = styled.h1`
+  font-size: 2.5rem;
+  margin: 0; /* Ensure no extra margin */
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start; /* Align children to the start (left) */
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem 0;
+`;
+
+const ContentContainer = styled.div`
+  width: 100%; /* Adjust the width as needed */
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: left; /* Left-align text */
+  margin-right: 2rem; /* Add space between content and image */
+  margin-top: 2rem; 
+`;
+
+const ContentContainer2 = styled.div`
+  width: 100%; /* Adjust the width as needed */
+  background-color: #0a2b61;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: left; /* Left-align text */
+`;
+
+
+const BoldText = styled.span`
+  font-weight: bold;
+`;
+
+const Title = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #003f91;
+`;
+
+const Subtitle = styled.p`
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+`;
+
+const ImageWrapper = styled.div`
+  width: 40%; /* Take the remaining space */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align images to the start (left) */
+  padding-left: 1rem; /* Add padding to separate the image from the content */
+`;
+const Footer = styled.footer`
+  width: 100%;
+  background-color: #0a2b61;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+`;
+
+const FooterContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const SocialIcon = styled.a`
+  color: white;
+  font-size: 1.5rem;
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+  margin: 2rem 0; /* Add margin to separate images */
+`;
+
+export default function DonatePage() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-center p-6"
-      style={{ backgroundColor: '#EFE8DC' }}
-    >
-      {/* Header Section */}
-      <div className="mb-8 w-full text-center">
-        <h1 className="text-9xl font-bold text-blue-900">ABOUT</h1>
-        <div className="mt-4 inline-block bg-red-600 px-8 py-2 text-6xl font-bold text-white">
-          RAYMOND LIU
-        </div>
-      </div>
-
-      {/* Content Section with Background Image */}
-
-      <div
-        className="flex w-full flex-col items-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/cliff.jpg)', padding: '2rem' }}
-      >
-        <div className="w-full max-w-4xl rounded-lg border-4 border-blue-900 bg-white p-8 text-left shadow-md">
-          <p className="mb-4 text-3xl font-bold text-gray-600">
-            Raymond Liu was born and raised in the Bay Area, completing his K-12
-            education in public schools right here in the Bay. Like many others,
-            he found the cost of a 4-year university daunting, and he instead
-            went to his local community college, Ohlone College. He graduated
-            with 3 Associate of Science degrees in Math, Natural Sciences and
-            Computer Science. In 2017 he transferred to UC Davis, to complete
-            his Bachelors of Science in Computer Science. He graduated in the
-            spring of 2019, and since then, he&apos;s worked as an Engineer at
-            various companies before deciding to run for office in order to give
-            back to the community who has helped him.
-          </p>
-          <p className="text-lg text-gray-800">
-            For more information, visit{' '}
-            <Link href="raymondliucampaign.com" legacyBehavior>
-              <a className="text-blue-600 underline">www.reallygreatsite.com</a>
-            </Link>
-            .
-          </p>
-        </div>
-      </div>
-
-      {/* Footer Section */}
-      <footer className="mt-8 w-full bg-blue-900 py-8">
-        <div className="flex items-center justify-center space-x-8">
-          <Image
-            src="/Logo.jpg"
-            alt="Raymond Liu Logo"
-            width={100}
-            height={100}
-          />
-          <div className="flex space-x-4">
-            <Link href="https://www.facebook.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="h-8 w-8 text-white" />
-              </a>
+    <PageContainer>
+      <Header>
+        <HeaderText>ENDORSEMENTS<br></br></HeaderText>
+      </Header>
+      <ContentContainer2>
+      <ImageContainer>
+        <Image src="/raymondsenatepic.jpg" alt="endorsement page" width={806} height={605} />
+      </ImageContainer>
+      </ContentContainer2>
+      <ContentWrapper>
+        <ContentContainer>
+          <Subtitle>
+          Ray has always been a fighter for the economic and social rights of Undocumented citizens like myself. 
+          That's why I trust him to be District 10's next state Senator, I know he'll continue to do the good work he's
+          always done and be on the right side of justice.
+            <br /><br />
+            <i>- Flavio Arechiga </i>
+          </Subtitle>
+        </ContentContainer>
+        <ImageWrapper>
+          <ImageContainer>
+            <Image src="/flavio.jpg" alt="Raymond with Supporters" width={151} height={206} />
+          </ImageContainer>
+          {/* Add more images here if needed */}
+        </ImageWrapper>
+      </ContentWrapper>
+      <ContentWrapper>
+      <ImageWrapper>
+          <ImageContainer>
+            <Image src="/flavio.jpg" alt="Raymond with Supporters" width={151} height={206} />
+          </ImageContainer>
+          {/* Add more images here if needed */}
+        </ImageWrapper>
+        <ContentContainer>
+          <Subtitle>
+          Ray has always been a fighter for the economic and social rights of Undocumented citizens like myself. 
+          That's why I trust him to be District 10's next state Senator, I know he'll continue to do the good work he's
+          always done and be on the right side of justice.
+            <br /><br />
+            <i>- Flavio Arechiga </i>
+          </Subtitle>
+        </ContentContainer>
+      </ContentWrapper>
+      <Footer>
+        <FooterContent>
+          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <SocialLinks>
+            <Link href="https://www.facebook.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </SocialIcon>
             </Link>
             <Link href="https://www.instagram.com" legacyBehavior>
               <a target="_blank" rel="noopener noreferrer">

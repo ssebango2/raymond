@@ -1,71 +1,202 @@
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { lusitana } from '@/app/ui/fonts';
+'use client';
+
+import { useState } from 'react';
+import styled from 'styled-components';
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import Link from 'next/link';
 
-export default function Page() {
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 0; /* Remove padding */
+`;
+
+const Header = styled.header`
+  width: 100%;
+  height: 300px; /* Set the desired height */
+  background-image: url('/senate-modified.jpg'); 
+  background-size: cover;
+  background-position: center; /* Align the image to the center */
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  margin: 0; /* Ensure no extra margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const HeaderText = styled.h1`
+  font-size: 2.5rem;
+  margin: 0; /* Ensure no extra margin */
+`;
+
+const FormContainer = styled.div`
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  padding: 2rem;
+  text-align: center;
+`;
+
+const FormTitle = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #003f91;
+`;
+
+const FormSubtitle = styled.p`
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Input = styled.input`
+  font-size: 1rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
+
+const TextArea = styled.textarea`
+  font-size: 1rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+`;
+
+const Button = styled.button`
+  font-size: 1rem;
+  padding: 0.75rem;
+  background-color: #0a2b61;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #002f72;
+  }
+  
+`;
+const Footer = styled.footer`
+  width: 100%;
+  background-color: #0a2b61;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+`;
+
+const FooterContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const SocialIcon = styled.a`
+  color: white;
+  font-size: 1.5rem;
+`;
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+  };
+
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-center p-6"
-      style={{ backgroundColor: '#EFE8DC' }}
-    >
-      {/* Header Section */}
-      <div className="mb-8 w-full text-center">
-        <h1 className="text-9xl font-bold text-blue-900">CONTACT</h1>
-      </div>
-
-      {/* Content Section with Background Image */}
-
-      <div
-        className="flex w-full flex-col items-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/cliff.jpg)', padding: '2rem' }}
-      >
-        <div className="w-full max-w-4xl rounded-lg border-4 border-blue-900 bg-white p-8 text-left shadow-md">
-          <p className="mb-4 text-3xl font-bold text-gray-600">
-            Feel free to contact me via my campaign email:
-            admin@raymondliu4CASenate.com I look through the email every single
-            day, and I personally will respond to every single one of my future
-            constituents.
-          </p>
-          <p className="text-lg text-gray-800">
-            For more information, visit{' '}
-            <Link href="raymondliucampaign.com" legacyBehavior>
-              <a className="text-blue-600 underline">www.reallygreatsite.com</a>
-            </Link>
-            .
-          </p>
-        </div>
-      </div>
-
-      {/* Footer Section */}
-      <footer className="mt-8 w-full bg-blue-900 py-8">
-        <div className="flex items-center justify-center space-x-8">
-          <Image
-            src="/Logo.jpg"
-            alt="Raymond Liu Logo"
-            width={100}
-            height={100}
+    <PageContainer>
+      <Header>
+        <HeaderText>Contact Raymond</HeaderText>
+      </Header>
+      <FormContainer>
+        <FormSubtitle>
+          Feel free to contact me with questions or volunteer opportunities to 
+          support my race for the District 6 Fremont City Council seat.
+        </FormSubtitle>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
           />
-          <div className="flex space-x-4">
-            <Link href="https://www.facebook.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="h-8 w-8 text-white" />
-              </a>
+          <Input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <TextArea
+            name="message"
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
+            rows={6}
+          />
+          <Button type="submit">Send</Button>
+        </Form>
+      </FormContainer>
+      <Footer>
+        <FooterContent>
+          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <SocialLinks>
+            <Link href="https://www.facebook.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </SocialIcon>
             </Link>
-            <Link href="https://www.instagram.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaInstagram className="h-8 w-8 text-white" />
-              </a>
+            <Link href="https://www.instagram.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </SocialIcon>
             </Link>
-            <Link href="https://www.linkedin.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="h-8 w-8 text-white" />
-              </a>
+            <Link href="https://www.linkedin.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </SocialIcon>
             </Link>
-          </div>
-        </div>
-      </footer>
-    </main>
+          </SocialLinks>
+        </FooterContent>
+      </Footer>
+    </PageContainer>
   );
 }
