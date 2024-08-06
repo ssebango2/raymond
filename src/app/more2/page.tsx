@@ -135,7 +135,9 @@ export default function RegisterPage() {
     <PageContainer>
       <HeroSection>
         <HeroText>Learn How To Register Here</HeroText>
-        <HeroButton href="https://registertovote.ca.gov">registertovote.ca.gov</HeroButton>
+        <HeroButton href="https://registertovote.ca.gov">
+          registertovote.ca.gov
+        </HeroButton>
       </HeroSection>
       <HeroSection1>
         <HeroText>Official Ballot Box Locations</HeroText>
@@ -143,7 +145,12 @@ export default function RegisterPage() {
       </HeroSection1>
       <Footer>
         <FooterContent>
-          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <Image
+            src="/newLogo.jpg"
+            alt="Campaign Logo"
+            width={180}
+            height={40}
+          />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
               <SocialIcon target="_blank" rel="noopener noreferrer">

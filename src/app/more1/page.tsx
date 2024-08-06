@@ -42,7 +42,7 @@ const ContentContainer = styled.div`
   padding: 2rem;
   text-align: left; /* Left-align text */
   margin-right: 2rem; /* Add space between content and image */
-  margin-top: 2rem; 
+  margin-top: 2rem;
 `;
 
 const ContentContainer2 = styled.div`
@@ -52,7 +52,6 @@ const ContentContainer2 = styled.div`
   padding: 2rem;
   text-align: left; /* Left-align text */
 `;
-
 
 const BoldText = styled.span`
   font-weight: bold;
@@ -123,23 +122,36 @@ export default function DonatePage() {
   return (
     <PageContainer>
       <Header>
-        <HeaderText>WHERE IS DISTRICT 6?<br></br></HeaderText>
+        <HeaderText>
+          WHERE IS DISTRICT 6?<br></br>
+        </HeaderText>
       </Header>
       <ContentContainer2>
-      <ImageContainer>
-        <Image src="/district6.jpg" alt="endorsement page" width={873} height={905} />
-      </ImageContainer>
+        <ImageContainer>
+          <Image
+            src="/district6.jpg"
+            alt="endorsement page"
+            width={873}
+            height={905}
+          />
+        </ImageContainer>
       </ContentContainer2>
       <ContentWrapper>
         <ContentContainer>
           <Subtitle>
-          Fremont's district 6 includes the area within the blue lines above
+            Fremont&apos;s district 6 includes the area within the blue lines
+            above
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>
       <Footer>
         <FooterContent>
-          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <Image
+            src="/newLogo.jpg"
+            alt="Campaign Logo"
+            width={180}
+            height={40}
+          />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
               <SocialIcon target="_blank" rel="noopener noreferrer">

@@ -13,7 +13,12 @@ const Navbar = () => {
   return (
     <NavContainer>
       <Logo>
-        <Image src="/newLogo.jpg" alt="Raymond Liu Logo" width={180} height={40} />
+        <Image
+          src="/newLogo.jpg"
+          alt="Raymond Liu Logo"
+          width={180}
+          height={40}
+        />
       </Logo>
       <NavLinks>
         <NavItem>
@@ -36,7 +41,10 @@ const Navbar = () => {
         </NavItem>
         <NavItem onClick={() => setDropdownOpen(!dropdownOpen)}>
           <MoreContainer>
-            MORE <FontAwesomeIcon icon={dropdownOpen ? faChevronUp : faChevronDown} />
+            MORE{' '}
+            <FontAwesomeIcon
+              icon={dropdownOpen ? faChevronUp : faChevronDown}
+            />
           </MoreContainer>
           {dropdownOpen && (
             <DropdownMenu>

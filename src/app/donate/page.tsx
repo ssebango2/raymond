@@ -101,7 +101,6 @@ const ImageContainer = styled.div`
   margin: 2rem 0; /* Add margin to separate the image from other content */
 `;
 
-
 export default function DonatePage() {
   const [mounted, setMounted] = useState(false);
 
@@ -121,7 +120,8 @@ export default function DonatePage() {
       <ContentContainer>
         <Title>Your Support Makes a Difference</Title>
         <Subtitle>
-          Join us in making a positive impact in our community by contributing to our campaign. Every donation helps us get closer to our goals.
+          Join us in making a positive impact in our community by contributing
+          to our campaign. Every donation helps us get closer to our goals.
         </Subtitle>
         <Link href="https://secure.actblue.com/donate/campaign" passHref>
           <DonateButton>Donate Now</DonateButton>
@@ -129,7 +129,12 @@ export default function DonatePage() {
       </ContentContainer>
       <Footer>
         <FooterContent>
-          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <Image
+            src="/newLogo.jpg"
+            alt="Campaign Logo"
+            width={180}
+            height={40}
+          />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
               <SocialIcon target="_blank" rel="noopener noreferrer">

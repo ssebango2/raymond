@@ -116,25 +116,42 @@ export default function DonatePage() {
         <HeaderText>RAYMOND LIU FOR FREMONT CITY COUNCIL</HeaderText>
       </Header>
       <ImageContainer>
-        <Image src="/Fremont.jpg" alt="About Raymond" width={975} height={650} />
+        <Image
+          src="/Fremont.jpg"
+          alt="About Raymond"
+          width={975}
+          height={650}
+        />
       </ImageContainer>
       <ContentContainer>
         <Subtitle>
-          <BoldText>Hello, my name is Raymond Liu. Thank you for visiting my website.</BoldText>
-          <br></br><br></br>
-        I was born and raised in the Bay Area, completing his K-12 education in public schools right here in the Bay.
-        <br></br>
-        Like many others, I found the cost of a 4-year university daunting, and I instead went to
-        Ohlone College. <br></br> I graduated with 3 Associate of Science degrees in Math, Natural Sciences and Computer Science.
-        <br></br>
-        In 2017 I transferred to UC Davis, to complete my Bachelors of Science in Computer Science. <br></br>I graduated in the spring 
-        of 2019, and since then, I've worked as an Engineer at various companies before <br></br>deciding to run for office in order to give 
-        back to the community who have helped me.
+          <BoldText>
+            Hello, my name is Raymond Liu. Thank you for visiting my website.
+          </BoldText>
+          <br></br>
+          <br></br>I was born and raised in the Bay Area, completing his K-12
+          education in public schools right here in the Bay.
+          <br></br>
+          Like many others, I found the cost of a 4-year university daunting,
+          and I instead went to Ohlone College. <br></br> I graduated with 3
+          Associate of Science degrees in Math, Natural Sciences and Computer
+          Science.
+          <br></br>
+          In 2017 I transferred to UC Davis, to complete my Bachelors of Science
+          in Computer Science. <br></br>I graduated in the spring of 2019, and
+          since then, I&apos;ve worked as an Engineer at various companies
+          before <br></br>deciding to run for office in order to give back to
+          the community who have helped me.
         </Subtitle>
       </ContentContainer>
       <Footer>
         <FooterContent>
-          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <Image
+            src="/newLogo.jpg"
+            alt="Campaign Logo"
+            width={180}
+            height={40}
+          />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
               <SocialIcon target="_blank" rel="noopener noreferrer">
