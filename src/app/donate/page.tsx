@@ -1,3 +1,5 @@
+// src/pages/donate.tsx
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -99,6 +101,7 @@ const ImageContainer = styled.div`
   margin: 2rem 0; /* Add margin to separate the image from other content */
 `;
 
+
 export default function DonatePage() {
   const [mounted, setMounted] = useState(false);
 
@@ -113,23 +116,16 @@ export default function DonatePage() {
   return (
     <PageContainer>
       <Header>
-        <HeaderText>ABOUT RAYMOND</HeaderText>
+        <HeaderText>Contribute to the Campaign</HeaderText>
       </Header>
-      <ImageContainer>
-        <Image src="/placeholder.jpg" alt="About Raymond" width={975} height={650} />
-      </ImageContainer>
       <ContentContainer>
+        <Title>Your Support Makes a Difference</Title>
         <Subtitle>
-        As a proud longtime resident and product of Fremont's public school system, 
-        I, Raymond Liu, am running for Fremont City Council to restore integrity and accountability 
-        to our local government. Our city has been rocked by scandals, most notably the former City 
-        Manager's fraud conviction due to misuse of public funds, highlighting a deep-rooted culture 
-        of corruption that has taken place. Additionally, the rising homeless population is a stark 
-        indictment of the current council’s failed policies and lack of effective leadership. 
-        Fremont deserves better. I am committed to transparency, ethical governance, and implementing 
-        practical solutions to address homelessness. Together, we can reclaim our city’s promise and 
-        build a better future for all residents. Vote for Raymond Liu for Fremont City Council.
+          Join us in making a positive impact in our community by contributing to our campaign. Every donation helps us get closer to our goals.
         </Subtitle>
+        <Link href="https://secure.actblue.com/donate/campaign" passHref>
+          <DonateButton>Donate Now</DonateButton>
+        </Link>
       </ContentContainer>
       <Footer>
         <FooterContent>
