@@ -2,58 +2,131 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 0; /* Remove padding */
+`;
+
+const Header = styled.header`
+  width: 100%;
+  background-color: #0a2b61;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  margin: 0; /* Ensure no extra margin */
+`;
+
+const HeaderText = styled.h1`
+  font-size: 2.5rem;
+  margin: 0; /* Ensure no extra margin */
+`;
+
+const ContentContainer = styled.div`
+  width: 100%; /* Take full width */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  padding: 2rem;
+  text-align: center;
+`;
+
+const BoldText = styled.span`
+  font-weight: bold;
+`;
+
+const Title = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #003f91;
+`;
+
+const Subtitle = styled.p`
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+`;
+
+const DonateButton = styled.a`
+  display: inline-block;
+  background-color: #d32f2f;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #b22a25;
+  }
+`;
+
+const Footer = styled.footer`
+  width: 100%;
+  background-color: #0a2b61;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+`;
+
+const FooterContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const SocialIcon = styled.a`
+  color: white;
+  font-size: 1.5rem;
+`;
+
+const ImageContainer = styled.div`
+  margin: 2rem 0; /* Add margin to separate the image from other content */
+`;
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-6" style={{ backgroundColor: '#EFE8DC' }}>   
-       {/* Header Section */}
-      <div className="w-full text-center mb-8">
-        <h1 className="text-blue-900 text-9xl font-bold">ABOUT</h1>
-        <div className="bg-red-600 text-white text-6xl font-bold py-2 mt-4 inline-block px-8">
-          RAYMOND LIU
-        </div>
-      </div>
-      
-    {/* Content Section with Background Image */}
-    <div
-        className="w-full flex flex-col items-center bg-cover bg-center bg-no-repeat relative"
-        style={{ backgroundImage: 'url(/cliff.jpg)', padding: '2rem' }}
-      >
-        <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl space-y-8 md:space-y-0 md:space-x-8">
-          <div className="w-full bg-white p-8 rounded-lg shadow-md text-left border-4 border-blue-900 z-10 flex-1">
-            <p className="text-gray-600 text-3xl font-bold mb-4">
-              Raymond Liu was born and raised in the Bay Area, completing his K-12 
-              education in public schools right here in Fremont. Like many others, 
-              he found the cost of a 4-year university daunting, and he instead 
-              went to his local community college, Ohlone College. 
-              
-              He graduated with 3 Associate of Science degrees in Math, Natural Sciences 
-              and Computer Science. In 2017 he transferred to UC Davis, to complete his 
-              Bachelors of Science in Computer Science. He graduated in the spring of 2019, 
-              and since then, he’s worked as an Engineer at various companies before deciding to run 
-                for office in order to give back to the community who has helped him.
-            </p>
-            <p className="text-gray-800 text-lg">
-              For more information, visit <Link href="http://www.reallygreatsite.com" legacyBehavior><a className="text-blue-600 underline">www.reallygreatsite.com</a></Link>.
-            </p>
-          </div>
-          <div className="w-full bg-white p-8 rounded-lg shadow-md text-left border-4 border-blue-900 z-10 flex items-center justify-center flex-1">
-            <Image src="/raymondsenatepic.jpg" alt="Raymond Liu Logo" width={300} height={300} />
-          </div>
-        </div>
-      </div>
-
-   {/* Footer Section */}
-   <footer className="w-full bg-blue-900 py-8 mt-8">
-        <div className="flex justify-center items-center space-x-8">
-          <Image src="/Logo.jpg" alt="Raymond Liu Logo" width={100} height={100} />
-          <div className="flex space-x-4">
-            <Link href="https://www.facebook.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="text-white w-8 h-8" />
-              </a>
+    <PageContainer>
+      <Header>
+        <HeaderText>ABOUT RAYMOND</HeaderText>
+      </Header>
+      <ImageContainer>
+        <Image src="/placeholder.jpg" alt="About Raymond" width={975} height={650} />
+      </ImageContainer>
+      <ContentContainer>
+        <Subtitle>
+        As a proud longtime resident and product of Fremont's public school system, 
+        I, Raymond Liu, am running for Fremont City Council to restore integrity and accountability 
+        to our local government. Our city has been rocked by scandals, most notably the former City 
+        Manager's fraud conviction due to misuse of public funds, highlighting a deep-rooted culture 
+        of corruption that has taken place. Additionally, the rising homeless population is a stark 
+        indictment of the current council’s failed policies and lack of effective leadership. 
+        Fremont deserves better. I am committed to transparency, ethical governance, and implementing 
+        practical solutions to address homelessness. Together, we can reclaim our city’s promise and 
+        build a better future for all residents. Vote for Raymond Liu for Fremont City Council.
+        </Subtitle>
+      </ContentContainer>
+      <Footer>
+        <FooterContent>
+          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <SocialLinks>
+            <Link href="https://www.facebook.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </SocialIcon>
             </Link>
             <Link href="https://www.instagram.com" legacyBehavior>
               <a target="_blank" rel="noopener noreferrer">
