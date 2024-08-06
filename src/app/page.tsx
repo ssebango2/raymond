@@ -113,22 +113,23 @@ export default function DonatePage() {
   return (
     <PageContainer>
       <Header>
-        <HeaderText>ABOUT RAYMOND</HeaderText>
+        <HeaderText>RAYMOND LIU FOR FREMONT CITY COUNCIL</HeaderText>
       </Header>
       <ImageContainer>
-        <Image src="/placeholder.jpg" alt="About Raymond" width={975} height={650} />
+        <Image src="/Fremont.jpg" alt="About Raymond" width={975} height={650} />
       </ImageContainer>
       <ContentContainer>
         <Subtitle>
-        As a proud longtime resident and product of Fremont's public school system, 
-        I, Raymond Liu, am running for Fremont City Council to restore integrity and accountability 
-        to our local government. Our city has been rocked by scandals, most notably the former City 
-        Manager's fraud conviction due to misuse of public funds, highlighting a deep-rooted culture 
-        of corruption that has taken place. Additionally, the rising homeless population is a stark 
-        indictment of the current council’s failed policies and lack of effective leadership. 
-        Fremont deserves better. I am committed to transparency, ethical governance, and implementing 
-        practical solutions to address homelessness. Together, we can reclaim our city’s promise and 
-        build a better future for all residents. Vote for Raymond Liu for Fremont City Council.
+          <BoldText>Hello, my name is Raymond Liu. Thank you for visiting my website.</BoldText>
+          <br></br><br></br>
+        I was born and raised in the Bay Area, completing his K-12 education in public schools right here in the Bay.
+        <br></br>
+        Like many others, I found the cost of a 4-year university daunting, and I instead went to
+        Ohlone College. <br></br> I graduated with 3 Associate of Science degrees in Math, Natural Sciences and Computer Science.
+        <br></br>
+        In 2017 I transferred to UC Davis, to complete my Bachelors of Science in Computer Science. <br></br>I graduated in the spring 
+        of 2019, and since then, I've worked as an Engineer at various companies before <br></br>deciding to run for office in order to give 
+        back to the community who have helped me.
         </Subtitle>
       </ContentContainer>
       <Footer>

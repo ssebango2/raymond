@@ -116,7 +116,7 @@ export default function DonatePage() {
         <HeaderText>ABOUT RAYMOND</HeaderText>
       </Header>
       <ImageContainer>
-        <Image src="/placeholder.jpg" alt="About Raymond" width={975} height={650} />
+        <Image src="/Fremont.jpg" alt="About Raymond" width={975} height={650} />
       </ImageContainer>
       <ContentContainer>
         <Subtitle>
