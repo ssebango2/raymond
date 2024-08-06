@@ -120,35 +120,39 @@ export default function DonatePage() {
       </ImageContainer>
       <ContentContainer>
         <Subtitle>
-        As a proud longtime resident and product of Fremont's public school system, 
-        I, Raymond Liu, am running for Fremont City Council to restore integrity and accountability 
-        to our local government. Our city has been rocked by scandals, most notably the former City 
-        Manager's fraud conviction due to misuse of public funds, highlighting a deep-rooted culture 
-        of corruption that has taken place. Additionally, the rising homeless population is a stark 
-        indictment of the current council’s failed policies and lack of effective leadership. 
-        Fremont deserves better. I am committed to transparency, ethical governance, and implementing 
-        practical solutions to address homelessness. Together, we can reclaim our city’s promise and 
-        build a better future for all residents. Vote for Raymond Liu for Fremont City Council.
+          <BoldText>As a proud longtime resident and product of Fremont's public school system, 
+          I, Raymond Liu, am running for Fremont City Council to restore integrity and accountability 
+          to our local government.</BoldText> <br></br><br></br>
+          Our city has been rocked by scandals, most notably the{' '}
+          <Link href="https://www.mercurynews.com/2022/03/30/former-fremont-city-manager-mark-danaj-charged-with-embezzlement/" passHref>
+            former City Manager's fraud
+          </Link>
+          {' '}conviction due to misuse of public funds, highlighting a deep-rooted culture 
+          of corruption that has taken place. Additionally, the rising homeless population is a stark 
+          indictment of the current council’s failed policies and lack of effective leadership. 
+          Fremont deserves better. I am committed to transparency, ethical governance, and implementing 
+          practical solutions to address homelessness. Together, we can reclaim our city’s promise and 
+          build a better future for all residents. Vote for Raymond Liu for Fremont City Council.
         </Subtitle>
       </ContentContainer>
       <Footer>
         <FooterContent>
           <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
           <SocialLinks>
-            <Link href="https://www.facebook.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.facebook.com" passHref legacyBehavior>
+              <a target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-facebook-f"></i>
-              </SocialIcon>
+              </a>
             </Link>
-            <Link href="https://www.instagram.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.instagram.com" passHref legacyBehavior>
+              <a target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram"></i>
-              </SocialIcon>
+              </a>
             </Link>
-            <Link href="https://www.linkedin.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com" passHref legacyBehavior>
+              <a target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin-in"></i>
-              </SocialIcon>
+              </a>
             </Link>
           </SocialLinks>
         </FooterContent>

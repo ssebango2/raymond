@@ -117,9 +117,8 @@ export default function DonatePage() {
       </Header>
       <ContentContainer>
         <Subtitle>
-          <BoldText>Question content number 1?</BoldText>
+          <BoldText>Coming soon</BoldText>
           <br /><br />
-          Answer content blah blah blah blah ....
         </Subtitle>
       </ContentContainer>
       <ContentContainer>
