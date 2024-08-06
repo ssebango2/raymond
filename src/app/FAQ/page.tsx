@@ -118,26 +118,34 @@ export default function DonatePage() {
       <ContentContainer>
         <Subtitle>
           <BoldText>Coming soon</BoldText>
-          <br /><br />
+          <br />
+          <br />
         </Subtitle>
       </ContentContainer>
       <ContentContainer>
         <Subtitle>
           <BoldText>Question content number 1?</BoldText>
-          <br /><br />
+          <br />
+          <br />
           Answer content blah blah blah blah ....
         </Subtitle>
       </ContentContainer>
       <ContentContainer>
         <Subtitle>
           <BoldText>Question content number 1?</BoldText>
-          <br /><br />
+          <br />
+          <br />
           Answer content blah blah blah blah ....
         </Subtitle>
       </ContentContainer>
       <Footer>
         <FooterContent>
-          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <Image
+            src="/newLogo.jpg"
+            alt="Campaign Logo"
+            width={180}
+            height={40}
+          />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
               <SocialIcon target="_blank" rel="noopener noreferrer">

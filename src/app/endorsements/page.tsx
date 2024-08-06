@@ -17,7 +17,7 @@ const PageContainer = styled.div`
 const Header = styled.header`
   width: 100%;
   height: 300px; /* Set the desired height */
-  background-image: url('/wasdc-modified.jpg'); 
+  background-image: url('/wasdc-modified.jpg');
   background-size: cover;
   background-position: center; /* Align the image to the center */
   background-repeat: no-repeat;
@@ -49,7 +49,7 @@ const ContentContainer = styled.div`
   padding: 2rem;
   text-align: left; /* Left-align text */
   margin-right: 2rem; /* Add space between content and image */
-  margin-top: 2rem; 
+  margin-top: 2rem;
 `;
 
 const ContentContainer2 = styled.div`
@@ -59,7 +59,6 @@ const ContentContainer2 = styled.div`
   padding: 2rem;
   text-align: left; /* Left-align text */
 `;
-
 
 const BoldText = styled.span`
   font-weight: bold;
@@ -132,50 +131,78 @@ export default function DonatePage() {
   return (
     <PageContainer>
       <Header>
-        <HeaderText>ENDORSEMENTS<br></br></HeaderText>
+        <HeaderText>
+          ENDORSEMENTS<br></br>
+        </HeaderText>
       </Header>
       <ContentContainer2>
-      <ImageContainer>
-        <Image src="/raymondsenatepic.jpg" alt="endorsement page" width={806} height={605} />
-      </ImageContainer>
+        <ImageContainer>
+          <Image
+            src="/raymondsenatepic.jpg"
+            alt="endorsement page"
+            width={806}
+            height={605}
+          />
+        </ImageContainer>
       </ContentContainer2>
       <ContentWrapper>
         <ContentContainer>
           <Subtitle>
-          Ray has always been a fighter for the economic and social rights of Undocumented citizens like myself. 
-          That's why I trust him to be District 10's next state Senator, I know he'll continue to do the good work he's
-          always done and be on the right side of justice.
-            <br /><br />
+            Ray has always been a fighter for the economic and social rights of
+            Undocumented citizens like myself. That&apos;s why I trust him to be
+            District 10&apos;s next state Senator, I know he&apos;ll continue to
+            do the good work he&apos;s always done and be on the right side of
+            justice.
+            <br />
+            <br />
             <i>- Flavio Arechiga </i>
           </Subtitle>
         </ContentContainer>
         <ImageWrapper>
           <ImageContainer>
-            <Image src="/flavio.jpg" alt="Raymond with Supporters" width={151} height={206} />
+            <Image
+              src="/flavio.jpg"
+              alt="Raymond with Supporters"
+              width={151}
+              height={206}
+            />
           </ImageContainer>
           {/* Add more images here if needed */}
         </ImageWrapper>
       </ContentWrapper>
       <ContentWrapper>
-      <ImageWrapper>
+        <ImageWrapper>
           <ImageContainer>
-            <Image src="/flavio.jpg" alt="Raymond with Supporters" width={151} height={206} />
+            <Image
+              src="/flavio.jpg"
+              alt="Raymond with Supporters"
+              width={151}
+              height={206}
+            />
           </ImageContainer>
           {/* Add more images here if needed */}
         </ImageWrapper>
         <ContentContainer>
           <Subtitle>
-          Ray has always been a fighter for the economic and social rights of Undocumented citizens like myself. 
-          That's why I trust him to be District 10's next state Senator, I know he'll continue to do the good work he's
-          always done and be on the right side of justice.
-            <br /><br />
+            Ray has always been a fighter for the economic and social rights of
+            Undocumented citizens like myself. That&apos;s why I trust him to be
+            District 10&apos;s next state Senator, I know he&apos;ll continue to
+            do the good work he&apos;s always done and be on the right side of
+            justice.
+            <br />
+            <br />
             <i>- Flavio Arechiga </i>
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>
       <Footer>
         <FooterContent>
-          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <Image
+            src="/newLogo.jpg"
+            alt="Campaign Logo"
+            width={180}
+            height={40}
+          />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
               <SocialIcon target="_blank" rel="noopener noreferrer">

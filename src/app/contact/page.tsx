@@ -17,7 +17,7 @@ const PageContainer = styled.div`
 const Header = styled.header`
   width: 100%;
   height: 300px; /* Set the desired height */
-  background-image: url('/senate-modified.jpg'); 
+  background-image: url('/senate-modified.jpg');
   background-size: cover;
   background-position: center; /* Align the image to the center */
   background-repeat: no-repeat;
@@ -87,11 +87,10 @@ const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #002f72;
   }
-  
 `;
 const Footer = styled.footer`
   width: 100%;
@@ -123,14 +122,16 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -146,7 +147,7 @@ export default function ContactPage() {
       </Header>
       <FormContainer>
         <FormSubtitle>
-          Feel free to contact me with questions or volunteer opportunities to 
+          Feel free to contact me with questions or volunteer opportunities to
           support my race for the District 6 Fremont City Council seat.
         </FormSubtitle>
         <Form onSubmit={handleSubmit}>
@@ -177,7 +178,12 @@ export default function ContactPage() {
       </FormContainer>
       <Footer>
         <FooterContent>
-          <Image src="/newLogo.jpg" alt="Campaign Logo" width={180} height={40} />
+          <Image
+            src="/newLogo.jpg"
+            alt="Campaign Logo"
+            width={180}
+            height={40}
+          />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
               <SocialIcon target="_blank" rel="noopener noreferrer">
