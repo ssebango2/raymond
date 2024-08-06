@@ -1,6 +1,8 @@
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+'use client';
+
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import Link from 'next/link';
-import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
 
 const PageContainer = styled.div`
@@ -180,19 +182,19 @@ export default function DonatePage() {
                 <i className="fab fa-facebook-f"></i>
               </SocialIcon>
             </Link>
-            <Link href="https://www.instagram.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaInstagram className="h-8 w-8 text-white" />
-              </a>
+            <Link href="https://www.instagram.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </SocialIcon>
             </Link>
-            <Link href="https://www.linkedin.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="h-8 w-8 text-white" />
-              </a>
+            <Link href="https://www.linkedin.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </SocialIcon>
             </Link>
-          </div>
-        </div>
-      </footer>
-    </main>
+          </SocialLinks>
+        </FooterContent>
+      </Footer>
+    </PageContainer>
   );
 }
