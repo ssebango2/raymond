@@ -38,9 +38,7 @@ const Navbar = () => {
           <Link href="/donate">DONATE</Link>
         </NavItem>
         <NavItem onClick={() => setDropdownOpen(!dropdownOpen)}>
-          <MoreContainer>
-            MORE{' '}
-          </MoreContainer>
+          <MoreContainer>MORE </MoreContainer>
           {dropdownOpen && (
             <DropdownMenu>
               <DropdownItem>
