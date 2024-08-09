@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 
 const Navbar = () => {
@@ -42,9 +40,6 @@ const Navbar = () => {
         <NavItem onClick={() => setDropdownOpen(!dropdownOpen)}>
           <MoreContainer>
             MORE{' '}
-            <FontAwesomeIcon
-              icon={dropdownOpen ? faChevronUp : faChevronDown}
-            />
           </MoreContainer>
           {dropdownOpen && (
             <DropdownMenu>
