@@ -1,80 +1,176 @@
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+'use client';
+
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import Link from 'next/link';
-import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
-export default function Page() {
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 0; /* Remove padding */
+`;
+
+const Header = styled.header`
+  width: 100%;
+  background-color: #0a2b61;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  margin: 0; /* Ensure no extra margin */
+`;
+
+const HeaderText = styled.h1`
+  font-size: 2.5rem;
+  margin: 0; /* Ensure no extra margin */
+`;
+
+const ContentContainer = styled.div`
+  width: 100%; /* Take full width */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  padding: 2rem;
+  text-align: center;
+`;
+
+const BoldText = styled.span`
+  font-weight: bold;
+`;
+
+const Title = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #003f91;
+`;
+
+const Subtitle = styled.p`
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+`;
+
+const DonateButton = styled.a`
+  display: inline-block;
+  background-color: #d32f2f;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #b22a25;
+  }
+`;
+
+const Footer = styled.footer`
+  width: 100%;
+  background-color: #0a2b61;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+`;
+
+const FooterContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const SocialIcon = styled.a`
+  color: white;
+  font-size: 1.5rem;
+`;
+
+const ImageContainer = styled.div`
+  margin: 2rem 0; /* Add margin to separate the image from other content */
+`;
+
+export default function DonatePage() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-center p-6"
-      style={{ backgroundColor: '#EFE8DC' }}
-    >
-      {/* Header Section */}
-      <div className="mb-8 w-full text-center">
-        <h1 className="text-9xl font-bold text-blue-900">ABOUT</h1>
-        <div className="mt-4 inline-block bg-red-600 px-8 py-2 text-6xl font-bold text-white">
-          RAYMOND LIU
-        </div>
-      </div>
-
-      {/* Content Section with Background Image */}
-
-      <div
-        className="flex w-full flex-col items-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/cliff.jpg)', padding: '2rem' }}
-      >
-        <div className="w-full max-w-4xl rounded-lg border-4 border-blue-900 bg-white p-8 text-left shadow-md">
-          <p className="mb-4 text-3xl font-bold text-gray-600">
-            Raymond Liu was born and raised in the Bay Area, completing his K-12
-            education in public schools right here in the Bay. Like many others,
-            he found the cost of a 4-year university daunting, and he instead
-            went to his local community college, Ohlone College. He graduated
-            with 3 Associate of Science degrees in Math, Natural Sciences and
-            Computer Science. In 2017 he transferred to UC Davis, to complete
-            his Bachelors of Science in Computer Science. He graduated in the
-            spring of 2019, and since then, he&apos;s worked as an Engineer at
-            various companies before deciding to run for office in order to give
-            back to the community who has helped him.
-          </p>
-          <p className="text-lg text-gray-800">
-            For more information, visit{' '}
-            <Link href="raymondliucampaign.com" legacyBehavior>
-              <a className="text-blue-600 underline">www.reallygreatsite.com</a>
-            </Link>
-            .
-          </p>
-        </div>
-      </div>
-
-      {/* Footer Section */}
-      <footer className="mt-8 w-full bg-blue-900 py-8">
-        <div className="flex items-center justify-center space-x-8">
+    <PageContainer>
+      <Header>
+        <HeaderText>RAYMOND LIU FOR FREMONT CITY COUNCIL</HeaderText>
+      </Header>
+      <ImageContainer>
+        <Image
+          src="/Fremont.jpg"
+          alt="About Raymond"
+          width={975}
+          height={650}
+        />
+      </ImageContainer>
+      <ContentContainer>
+        <Subtitle>
+          <BoldText>
+            Hello, my name is Raymond Liu. Thank you for visiting my website.
+          </BoldText>
+          <br></br>
+          <br></br>I was born and raised in the Bay Area, completing his K-12
+          education in public schools right here in the Bay.
+          <br></br>
+          Like many others, I found the cost of a 4-year university daunting,
+          and I instead went to Ohlone College. <br></br> I graduated with 3
+          Associate of Science degrees in Math, Natural Sciences and Computer
+          Science.
+          <br></br>
+          In 2017 I transferred to UC Davis, to complete my Bachelors of Science
+          in Computer Science. <br></br>I graduated in the spring of 2019, and
+          since then, I&apos;ve worked as an Engineer at various companies
+          before <br></br>deciding to run for office in order to give back to
+          the community who have helped me.
+        </Subtitle>
+      </ContentContainer>
+      <Footer>
+        <FooterContent>
           <Image
-            src="/Logo.jpg"
-            alt="Raymond Liu Logo"
-            width={100}
-            height={100}
+            src="/newLogo.jpg"
+            alt="Campaign Logo"
+            width={180}
+            height={40}
           />
-          <div className="flex space-x-4">
-            <Link href="https://www.facebook.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="h-8 w-8 text-white" />
-              </a>
+          <SocialLinks>
+            <Link href="https://www.facebook.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </SocialIcon>
             </Link>
-            <Link href="https://www.instagram.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaInstagram className="h-8 w-8 text-white" />
-              </a>
+            <Link href="https://www.instagram.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </SocialIcon>
             </Link>
-            <Link href="https://www.linkedin.com" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="h-8 w-8 text-white" />
-              </a>
+            <Link href="https://www.linkedin.com" passHref>
+              <SocialIcon target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </SocialIcon>
             </Link>
-          </div>
-        </div>
-      </footer>
-    </main>
+          </SocialLinks>
+        </FooterContent>
+      </Footer>
+    </PageContainer>
   );
 }
