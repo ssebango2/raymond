@@ -123,7 +123,7 @@ export default function DonatePage() {
           Join us in making a positive impact in our community by contributing
           to our campaign. Every donation helps us get closer to our goals.
         </Subtitle>
-        <Link href="https://secure.actblue.com/donate/campaign" passHref>
+        <Link href="#" passHref>
           <DonateButton>Donate Now</DonateButton>
         </Link>
       </ContentContainer>
