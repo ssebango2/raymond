@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
-import { DiResponsive } from 'react-icons/di';  
 
 const PageContainer = styled.div`
   display: flex;
@@ -198,14 +197,14 @@ export default function DonatePage() {
         </ImageContainer>
       </ContentContainer2>
       <ContentWrapper>
-      <ImageContainer>
-            <Image
-              src="/flavio.jpg"
-              alt="endorsement image"
-              width={400}
-              height={400}
-            />
-          </ImageContainer>
+        <ImageContainer>
+          <Image
+            src="/flavio.jpg"
+            alt="endorsement image"
+            width={400}
+            height={400}
+          />
+        </ImageContainer>
         <ContentContainer>
           <Subtitle>
             &quot;Through my career at the Fresno Area Hispanic Foundation, I
@@ -224,18 +223,18 @@ export default function DonatePage() {
             <i>- Flavio Arechiga, Non Profit Organization Worker </i>
           </Subtitle>
         </ContentContainer>
-          {/* Add more images here if needed */}
+        {/* Add more images here if needed */}
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/kam-ray.jpg"
-              alt="endorsement image"
-              width={384}
-              height={288}
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/kam-ray.jpg"
+            alt="endorsement image"
+            width={384}
+            height={288}
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;Raymond is one of the smartest people I know. He&apos;ll bring
@@ -250,7 +249,12 @@ export default function DonatePage() {
       </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
-          <Image src="/kian.jpg" alt="endorsement image" width={384} height={288} />
+          <Image
+            src="/kian.jpg"
+            alt="endorsement image"
+            width={384}
+            height={288}
+          />
         </ImageContainer>
         <ContentContainer>
           <Subtitle>
@@ -268,15 +272,15 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/stover.jpg"
-              alt="endorsement image"
-              width={360}
-              height={480}
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/stover.jpg"
+            alt="endorsement image"
+            width={360}
+            height={480}
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As an engineer, I value intelligence, critical thinking, and
@@ -294,22 +298,24 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/ferrer.jpg"
-              alt="endorsement image"
-              width={440}
-              height={330}
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/ferrer.jpg"
+            alt="endorsement image"
+            width={440}
+            height={330}
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
-          &quot;As a teacher, I take the education of our children seriously. 
-          That&apos;s why I&apos;m endorsing Raymond for Fremont City Council. He&apos;s dedication 
-          to improving our education is unparalleled, and his commitment to ethical 
-          governance is desperately needed after the corruption scandals plaguing Fremont. 
-          I fully back Raymond for Fremont&apos;s City Council and know he&apos;ll bring change that Fremont needs.&quot;
+            &quot;As a teacher, I take the education of our children seriously.
+            That&apos;s why I&apos;m endorsing Raymond for Fremont City Council.
+            He&apos;s dedication to improving our education is unparalleled, and
+            his commitment to ethical governance is desperately needed after the
+            corruption scandals plaguing Fremont. I fully back Raymond for
+            Fremont&apos;s City Council and know he&apos;ll bring change that
+            Fremont needs.&quot;
             <br />
             <br />
             <i>- Aidan Ferrer - Teacher at Notre Dame High School </i>
@@ -317,24 +323,24 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/geo.jpg"
-              alt="endorsement image"
-              width={440}
-              height={330}
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/geo.jpg"
+            alt="endorsement image"
+            width={440}
+            height={330}
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
-          &quot;As a Master&apos;s student at San Jose State University, 
-          I know the importance of having leaders who are not only 
-          intelligent but also genuinely care about the community. 
-          Raymond Liu is exactly that kind of leader. His focus on 
-          transparency and ethical governance is a breath of fresh air. 
-          I fully endorse Raymond Liu for Fremont City Council, confident 
-          that he will bring the positive change Fremont needs.&quot;
+            &quot;As a Master&apos;s student at San Jose State University, I
+            know the importance of having leaders who are not only intelligent
+            but also genuinely care about the community. Raymond Liu is exactly
+            that kind of leader. His focus on transparency and ethical
+            governance is a breath of fresh air. I fully endorse Raymond Liu for
+            Fremont City Council, confident that he will bring the positive
+            change Fremont needs.&quot;
             <br />
             <br />
             <i>- Geovany Ramirez, student at SJSU </i>
@@ -342,23 +348,24 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/rapha.jpg"
-              alt="endorsement image"
-              width={480}
-              height={320}
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/rapha.jpg"
+            alt="endorsement image"
+            width={480}
+            height={320}
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
-          &quot;As a student at Ohlone College, and a long time resident in Fremont, 
-          I&apos;m deeply concerned about the direction our city is headed. Raymond 
-          understands the challenges young people face, from affordable housing 
-          to quality education. His commitment to fighting corruption and improving 
-          our community makes him the candidate we need. I support Raymond Liu for 
-          Fremont City Council because he&apos;s dedicated to creating a better future for all of us.&quot;
+            &quot;As a student at Ohlone College, and a long time resident in
+            Fremont, I&apos;m deeply concerned about the direction our city is
+            headed. Raymond understands the challenges young people face, from
+            affordable housing to quality education. His commitment to fighting
+            corruption and improving our community makes him the candidate we
+            need. I support Raymond Liu for Fremont City Council because
+            he&apos;s dedicated to creating a better future for all of us.&quot;
             <br />
             <br />
             <i>- Raphael Barrera, Student at Ohlone College</i>
