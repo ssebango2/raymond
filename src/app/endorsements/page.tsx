@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
+import { DiResponsive } from 'react-icons/di';  
 
 const PageContainer = styled.div`
   display: flex;
@@ -35,8 +36,9 @@ const HeaderText = styled.h1`
 `;
 
 const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: flex-start; /* Align children to the start (left) */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 2rem 0;
@@ -50,6 +52,9 @@ const ContentContainer = styled.div`
   text-align: left; /* Left-align text */
   margin-right: 2rem; /* Add space between content and image */
   margin-top: 2rem;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 `;
 
 const ContentContainer2 = styled.div`
@@ -58,6 +63,7 @@ const ContentContainer2 = styled.div`
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   text-align: left; /* Left-align text */
+  display: flex;
 `;
 
 const ContentContainer3 = styled.div`
@@ -68,6 +74,7 @@ const ContentContainer3 = styled.div`
   padding-top: 
   height: 288px;
   text-align: left; /* Left-align text */
+  display: flex;
 `;
 
 const ContentContainer4 = styled.div`
@@ -78,6 +85,7 @@ const ContentContainer4 = styled.div`
   padding-top: 
   height: 10;
   text-align: left; /* Left-align text */
+  display: flex;
 `;
 
 const BoldText = styled.span`
@@ -97,19 +105,33 @@ const Subtitle = styled.p`
 `;
 
 const ImageWrapper = styled.div`
-  width: 40%; /* Take the remaining space */
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align images to the start (left) */
-  padding-left: 1rem; /* Add padding to separate the image from the content */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    justify-content: center; /* Center the image */
+    margin-bottom: 1rem; /* Adjust margin as needed */
+    padding-left: 0; /* Remove padding */
+  }
 `;
 
 const ImageWrapper1 = styled.div`
-  width: 50%; /* Take the remaining space */
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align images to the start (left) */
-  padding-left: 1rem; /* Add padding to separate the image from the content */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    justify-content: center; /* Center the image */
+    margin-bottom: 1rem; /* Adjust margin as needed */
+    padding-left: 0; /* Remove padding */
+  }
 `;
 
 const Footer = styled.footer`
@@ -143,6 +165,7 @@ const ImageContainer = styled.div`
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   width: 100%;
+  max-width: 100%;
   margin: 2rem 0; /* Add margin to separate images */
 `;
 
@@ -175,6 +198,14 @@ export default function DonatePage() {
         </ImageContainer>
       </ContentContainer2>
       <ContentWrapper>
+      <ImageContainer>
+            <Image
+              src="/flavio.jpg"
+              alt="endorsement image"
+              width={400}
+              height={400}
+            />
+          </ImageContainer>
         <ContentContainer>
           <Subtitle>
             &quot;Through my career at the Fresno Area Hispanic Foundation, I
@@ -193,31 +224,19 @@ export default function DonatePage() {
             <i>- Flavio Arechiga, Non Profit Organization Worker </i>
           </Subtitle>
         </ContentContainer>
-        <ImageWrapper>
-          <ImageContainer>
-            <Image
-              src="/flavio.jpg"
-              alt="flavio-endorsement"
-              width={400}
-              height={400}
-            />
-          </ImageContainer>
           {/* Add more images here if needed */}
-        </ImageWrapper>
       </ContentWrapper>
       <ContentWrapper>
-        <ImageWrapper1>
           <ImageContainer>
             <Image
               src="/kam-ray.jpg"
-              alt="Raymond with Supporters"
+              alt="endorsement image"
               width={384}
               height={288}
             />
           </ImageContainer>
           {/* Add more images here if needed */}
-        </ImageWrapper1>
-        <ContentContainer3>
+        <ContentContainer>
           <Subtitle>
             &quot;Raymond is one of the smartest people I know. He&apos;ll bring
             a level of transparency and honestly to Fremont that&apos;s sorely
@@ -227,9 +246,12 @@ export default function DonatePage() {
             <br />
             <i>- Kameron Pollard, Engineer </i>
           </Subtitle>
-        </ContentContainer3>
+        </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
+        <ImageContainer>
+          <Image src="/kian.jpg" alt="endorsement image" width={384} height={288} />
+        </ImageContainer>
         <ContentContainer>
           <Subtitle>
             &quot;As a teacher, I always tell my students that integrity is one
@@ -244,26 +266,18 @@ export default function DonatePage() {
             <i>- Kian Amini, public school teacher </i>
           </Subtitle>
         </ContentContainer>
-        <ImageWrapper>
-          <ImageContainer>
-            <Image src="/kian.jpg" alt="kian" width={384} height={288} />
-          </ImageContainer>
-          {/* Add more images here if needed */}
-        </ImageWrapper>
       </ContentWrapper>
       <ContentWrapper>
-        <ImageWrapper1>
           <ImageContainer>
             <Image
               src="/stover.jpg"
-              alt="Raymond with Supporters"
+              alt="endorsement image"
               width={360}
               height={480}
             />
           </ImageContainer>
           {/* Add more images here if needed */}
-        </ImageWrapper1>
-        <ContentContainer4>
+        <ContentContainer>
           <Subtitle>
             &quot;As an engineer, I value intelligence, critical thinking, and
             problem-solving skills—qualities that Raymond Liu embodies in
@@ -277,7 +291,79 @@ export default function DonatePage() {
             <br />
             <i>- Jon Stover, Software Engineer </i>
           </Subtitle>
-        </ContentContainer4>
+        </ContentContainer>
+      </ContentWrapper>
+      <ContentWrapper>
+          <ImageContainer>
+            <Image
+              src="/ferrer.jpg"
+              alt="endorsement image"
+              width={440}
+              height={330}
+            />
+          </ImageContainer>
+          {/* Add more images here if needed */}
+        <ContentContainer>
+          <Subtitle>
+          &quot;As a teacher, I take the education of our children seriously. 
+          That&apos;s why I&apos;m endorsing Raymond for Fremont City Council. He&apos;s dedication 
+          to improving our education is unparalleled, and his commitment to ethical 
+          governance is desperately needed after the corruption scandals plaguing Fremont. 
+          I fully back Raymond for Fremont&apos;s City Council and know he&apos;ll bring change that Fremont needs.&quot;
+            <br />
+            <br />
+            <i>- Aidan Ferrer - Teacher at Notre Dame High School </i>
+          </Subtitle>
+        </ContentContainer>
+      </ContentWrapper>
+      <ContentWrapper>
+          <ImageContainer>
+            <Image
+              src="/geo.jpg"
+              alt="endorsement image"
+              width={440}
+              height={330}
+            />
+          </ImageContainer>
+          {/* Add more images here if needed */}
+        <ContentContainer>
+          <Subtitle>
+          &quot;As a Master&apos;s student at San Jose State University, 
+          I know the importance of having leaders who are not only 
+          intelligent but also genuinely care about the community. 
+          Raymond Liu is exactly that kind of leader. His focus on 
+          transparency and ethical governance is a breath of fresh air. 
+          I fully endorse Raymond Liu for Fremont City Council, confident 
+          that he will bring the positive change Fremont needs.&quot;
+            <br />
+            <br />
+            <i>- Geovany Ramirez, student at SJSU </i>
+          </Subtitle>
+        </ContentContainer>
+      </ContentWrapper>
+      <ContentWrapper>
+          <ImageContainer>
+            <Image
+              src="/rapha.jpg"
+              alt="endorsement image"
+              width={480}
+              height={320}
+            />
+          </ImageContainer>
+          {/* Add more images here if needed */}
+        <ContentContainer>
+          <Subtitle>
+          &quot;As a student at Ohlone College, and a long time resident in Fremont, 
+          I&apos;m deeply concerned about the direction our city is headed. Raymond 
+          understands the challenges young people face, from affordable housing 
+          to quality education. His commitment to fighting corruption and improving 
+          our community makes him the candidate we need. I support Raymond Liu for 
+          Fremont City Council because he&apos;s dedicated to creating a better future for all of us.&quot;
+            <br />
+            <br />
+            <i>- Raphael Barrera, Student at Ohlone College</i>
+          </Subtitle>
+        </ContentContainer>
       </ContentWrapper>
       <Footer>
         <FooterContent>
