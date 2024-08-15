@@ -119,8 +119,8 @@ export default function DonatePage() {
         <Image
           src="/Fremont.jpg"
           alt="About Raymond"
-          width={975}
-          height={650}
+          width={1500}
+          height={1000}
         />
       </ImageContainer>
       <ContentContainer>
