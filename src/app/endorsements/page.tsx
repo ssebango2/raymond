@@ -187,14 +187,6 @@ export default function DonatePage() {
         </HeaderText>
       </Header>
       <ContentContainer2>
-        <ImageContainer>
-          <Image
-            src="/raymondsenatepic.jpg"
-            alt="endorsement page"
-            width={806}
-            height={605}
-          />
-        </ImageContainer>
       </ContentContainer2>
       <ContentWrapper>
         <ImageContainer>
