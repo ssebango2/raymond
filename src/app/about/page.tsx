@@ -121,6 +121,8 @@ export default function DonatePage() {
           alt="About Raymond"
           width={1500}
           height={1000}
+          priority={false} // Lazy loads the image
+          layout="responsive"
         />
       </ImageContainer>
       <ContentContainer>

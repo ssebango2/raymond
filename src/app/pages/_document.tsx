@@ -1,4 +1,4 @@
-// src/_document.tsx
+
 
 import Document, {
   Html,
@@ -40,6 +40,18 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* Preload the logo image */}
+          <link
+            rel="preload"
+            href="/newLogo.jpg"
+            as="image"
+            type="image/jpeg"
+          />
+          {/* Preload the Lusitana font */}
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap"
+          />
           {/* Additional meta tags and fonts can be included here if needed */}
         </Head>
         <body>

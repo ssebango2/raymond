@@ -189,14 +189,15 @@ export default function DonatePage() {
       <ContentContainer2>
       </ContentContainer2>
       <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/flavio.jpg"
-            alt="endorsement image"
-            width={400}
-            height={400}
-          />
-        </ImageContainer>
+      <ImageContainer>
+            <Image
+              src="/flavio.jpg"
+              alt="endorsement image"
+              width={400}
+              height={400}
+              priority={false} // Lazy loads the image
+            />
+          </ImageContainer>
         <ContentContainer>
           <Subtitle>
             &quot;Through my career at the Fresno Area Hispanic Foundation, I
@@ -218,15 +219,16 @@ export default function DonatePage() {
         {/* Add more images here if needed */}
       </ContentWrapper>
       <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/kam-ray.jpg"
-            alt="endorsement image"
-            width={384}
-            height={288}
-          />
-        </ImageContainer>
-        {/* Add more images here if needed */}
+          <ImageContainer>
+            <Image
+              src="/kam-ray.jpg"
+              alt="endorsement image"
+              width={384}
+              height={288}
+              priority={false} // Lazy loads the image
+            />
+          </ImageContainer>
+          {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;Raymond is one of the smartest people I know. He&apos;ll bring
@@ -241,12 +243,7 @@ export default function DonatePage() {
       </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
-          <Image
-            src="/kian.jpg"
-            alt="endorsement image"
-            width={384}
-            height={288}
-          />
+          <Image src="/kian.jpg" alt="endorsement image" width={384} height={288}  priority={false} />
         </ImageContainer>
         <ContentContainer>
           <Subtitle>
@@ -264,15 +261,16 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/stover.jpg"
-            alt="endorsement image"
-            width={360}
-            height={480}
-          />
-        </ImageContainer>
-        {/* Add more images here if needed */}
+          <ImageContainer>
+            <Image
+              src="/stover.jpg"
+              alt="endorsement image"
+              width={360}
+              height={480}
+              priority={false} // Lazy loads the image
+            />
+          </ImageContainer>
+          {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As an engineer, I value intelligence, critical thinking, and
@@ -290,15 +288,16 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/ferrer.jpg"
-            alt="endorsement image"
-            width={440}
-            height={330}
-          />
-        </ImageContainer>
-        {/* Add more images here if needed */}
+          <ImageContainer>
+            <Image
+              src="/ferrer.jpg"
+              alt="endorsement image"
+              width={440}
+              height={330}
+              priority={false} // Lazy loads the image
+            />
+          </ImageContainer>
+          {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As a teacher, I take the education of our children seriously.
@@ -315,15 +314,16 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/geo.jpg"
-            alt="endorsement image"
-            width={440}
-            height={330}
-          />
-        </ImageContainer>
-        {/* Add more images here if needed */}
+          <ImageContainer>
+            <Image
+              src="/geo.jpg"
+              alt="endorsement image"
+              width={440}
+              height={330}
+              priority={false} // Lazy loads the image
+            />
+          </ImageContainer>
+          {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As a Master&apos;s student at San Jose State University, I
@@ -340,15 +340,16 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/rapha.jpg"
-            alt="endorsement image"
-            width={480}
-            height={320}
-          />
-        </ImageContainer>
-        {/* Add more images here if needed */}
+          <ImageContainer>
+            <Image
+              src="/rapha.jpg"
+              alt="endorsement image"
+              width={480}
+              height={320}
+              priority={false} // Lazy loads the image
+            />
+          </ImageContainer>
+          {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As a student at Ohlone College, and a long time resident in
@@ -371,6 +372,7 @@ export default function DonatePage() {
             alt="Campaign Logo"
             width={180}
             height={40}
+            priority={false} // Lazy loads the image
           />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
