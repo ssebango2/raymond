@@ -149,6 +149,7 @@ export default function DonatePage() {
             alt="Campaign Logo"
             width={180}
             height={40}
+            priority={false} // Lazy loads the image
           />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>

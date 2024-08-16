@@ -183,24 +183,8 @@ export default function ContactPage() {
             alt="Campaign Logo"
             width={180}
             height={40}
+            priority={false} // Lazy loads the image
           />
-          <SocialLinks>
-            <Link href="https://www.facebook.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook-f"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.instagram.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.linkedin.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin-in"></i>
-              </SocialIcon>
-            </Link>
-          </SocialLinks>
         </FooterContent>
       </Footer>
     </PageContainer>

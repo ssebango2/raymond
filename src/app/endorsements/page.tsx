@@ -196,6 +196,7 @@ export default function DonatePage() {
               alt="endorsement image"
               width={400}
               height={400}
+              priority={false} // Lazy loads the image
             />
           </ImageContainer>
         <ContentContainer>
@@ -225,6 +226,7 @@ export default function DonatePage() {
               alt="endorsement image"
               width={384}
               height={288}
+              priority={false} // Lazy loads the image
             />
           </ImageContainer>
           {/* Add more images here if needed */}
@@ -242,7 +244,7 @@ export default function DonatePage() {
       </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
-          <Image src="/kian.jpg" alt="endorsement image" width={384} height={288} />
+          <Image src="/kian.jpg" alt="endorsement image" width={384} height={288}  priority={false} />
         </ImageContainer>
         <ContentContainer>
           <Subtitle>
@@ -266,6 +268,7 @@ export default function DonatePage() {
               alt="endorsement image"
               width={360}
               height={480}
+              priority={false} // Lazy loads the image
             />
           </ImageContainer>
           {/* Add more images here if needed */}
@@ -292,6 +295,7 @@ export default function DonatePage() {
               alt="endorsement image"
               width={440}
               height={330}
+              priority={false} // Lazy loads the image
             />
           </ImageContainer>
           {/* Add more images here if needed */}
@@ -315,6 +319,7 @@ export default function DonatePage() {
               alt="endorsement image"
               width={440}
               height={330}
+              priority={false} // Lazy loads the image
             />
           </ImageContainer>
           {/* Add more images here if needed */}
@@ -340,6 +345,7 @@ export default function DonatePage() {
               alt="endorsement image"
               width={480}
               height={320}
+              priority={false} // Lazy loads the image
             />
           </ImageContainer>
           {/* Add more images here if needed */}
@@ -364,6 +370,7 @@ export default function DonatePage() {
             alt="Campaign Logo"
             width={180}
             height={40}
+            priority={false} // Lazy loads the image
           />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
