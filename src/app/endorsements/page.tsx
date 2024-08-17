@@ -186,26 +186,27 @@ export default function DonatePage() {
           ENDORSEMENTS<br></br>
         </HeaderText>
       </Header>
-      <ContentContainer2>
-      </ContentContainer2>
+      <ContentContainer2></ContentContainer2>
       <ContentWrapper>
-      <ImageContainer>
-            <Image
-              src="/flavio.jpg"
-              alt="endorsement image"
-              width={400}
-              height={400}
-              priority={false} // Lazy loads the image
-            />
-          </ImageContainer>
+        <ImageContainer>
+          <Image
+            src="/flavio.jpg"
+            alt="endorsement image"
+            width={400}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
         <ContentContainer>
           <Subtitle>
-          &quot;I first met Ray as a fellow student at UC Davis, where his dedication 
-          and passion for community service were immediately evident. Now, as a 
-          Grant Program Assistant with the Fresno Area Hispanic Foundation, 
-          I see those same qualities in his run for Fremont City Council. Ray&apos;s 
-          commitment to transparency, inclusivity, and ethical leadership is exactly 
-          what Fremont needs. I am proud to endorse Raymond Liu, knowing he will bring positive change to Fremont.&quot;
+            &quot;I first met Ray as a fellow student at UC Davis, where his
+            dedication and passion for community service were immediately
+            evident. Now, as a Grant Program Assistant with the Fresno Area
+            Hispanic Foundation, I see those same qualities in his run for
+            Fremont City Council. Ray&apos;s commitment to transparency,
+            inclusivity, and ethical leadership is exactly what Fremont needs. I
+            am proud to endorse Raymond Liu, knowing he will bring positive
+            change to Fremont.&quot;
             <br></br>
             <br></br>
             <i>- Flavio Arechiga, Non Profit Organization Worker </i>
@@ -214,16 +215,16 @@ export default function DonatePage() {
         {/* Add more images here if needed */}
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/kam-ray.jpg"
-              alt="endorsement image"
-              width={384}
-              height={288}
-              priority={false} // Lazy loads the image
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/kam-ray.jpg"
+            alt="endorsement image"
+            width={384}
+            height={288}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;Raymond is one of the smartest people I know. He&apos;ll bring
@@ -238,7 +239,13 @@ export default function DonatePage() {
       </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
-          <Image src="/kian.jpg" alt="endorsement image" width={384} height={288}  priority={false} />
+          <Image
+            src="/kian.jpg"
+            alt="endorsement image"
+            width={384}
+            height={288}
+            priority={false}
+          />
         </ImageContainer>
         <ContentContainer>
           <Subtitle>
@@ -256,16 +263,16 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/stover.jpg"
-              alt="endorsement image"
-              width={360}
-              height={480}
-              priority={false} // Lazy loads the image
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/stover.jpg"
+            alt="endorsement image"
+            width={360}
+            height={480}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As an engineer, I value intelligence, critical thinking, and
@@ -283,16 +290,16 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/ferrer.jpg"
-              alt="endorsement image"
-              width={440}
-              height={330}
-              priority={false} // Lazy loads the image
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/ferrer.jpg"
+            alt="endorsement image"
+            width={440}
+            height={330}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As a teacher, I take the education of our children seriously.
@@ -309,16 +316,16 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/geo.jpg"
-              alt="endorsement image"
-              width={440}
-              height={330}
-              priority={false} // Lazy loads the image
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/geo.jpg"
+            alt="endorsement image"
+            width={440}
+            height={330}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As a Master&apos;s student at San Jose State University, I
@@ -335,16 +342,16 @@ export default function DonatePage() {
         </ContentContainer>
       </ContentWrapper>
       <ContentWrapper>
-          <ImageContainer>
-            <Image
-              src="/rapha.jpg"
-              alt="endorsement image"
-              width={480}
-              height={320}
-              priority={false} // Lazy loads the image
-            />
-          </ImageContainer>
-          {/* Add more images here if needed */}
+        <ImageContainer>
+          <Image
+            src="/rapha.jpg"
+            alt="endorsement image"
+            width={480}
+            height={320}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
         <ContentContainer>
           <Subtitle>
             &quot;As a student at Ohlone College, and a long time resident in

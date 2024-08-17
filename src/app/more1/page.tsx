@@ -104,8 +104,8 @@ const ImageContainer = styled.div`
   width: 80%;
   display: flex;
   justify-content: center; /* Centers the image horizontally */
-  align-items: center;     /* Centers the image vertically */
-  height: 100%;            /* Ensures the container has height for vertical centering */
+  align-items: center; /* Centers the image vertically */
+  height: 100%; /* Ensures the container has height for vertical centering */
 `;
 
 export default function DonatePage() {
@@ -126,14 +126,14 @@ export default function DonatePage() {
           WHERE IS DISTRICT 6?<br></br>
         </HeaderText>
       </Header>
-        <ImageContainer>
-          <Image
-            src="/district6.jpg"
-            alt="endorsement page"
-            width={655}
-            height={680}
-          />
-        </ImageContainer>
+      <ImageContainer>
+        <Image
+          src="/district6.jpg"
+          alt="endorsement page"
+          width={655}
+          height={680}
+        />
+      </ImageContainer>
       <ContentWrapper>
         <ContentContainer>
           <Subtitle>

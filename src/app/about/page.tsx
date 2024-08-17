@@ -104,7 +104,7 @@ const SocialIcon = styled.a`
 
 const ImageContainer = styled.div`
   margin: 2rem 0; /* Add margin to separate the image from other content */
-  width:80%;
+  width: 80%;
   layout: grid;
 `;
 
@@ -154,15 +154,16 @@ export default function DonatePage() {
             school system, I, Raymond Liu, am running for Fremont City Council
             to restore integrity and accountability to our local government.
           </BoldText>{' '}
-
         </Subtitle>
         <Subtitle1>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city has been rocked by scandals, most notably the&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city has been
+          rocked by scandals, most notably the&nbsp;
           <StyledLink href="https://www.mercurynews.com/2022/03/30/former-fremont-city-manager-mark-danaj-charged-with-embezzlement/">
-          former City Manager&apos;s fraud</StyledLink>&nbsp;
-          conviction due to misuse of public funds, highlighting a deep-rooted
-          culture of corruption that has taken place. Additionally, the rising
-          homeless population is a stark indictment of the current
+            former City Manager&apos;s fraud
+          </StyledLink>
+          &nbsp; conviction due to misuse of public funds, highlighting a
+          deep-rooted culture of corruption that has taken place. Additionally,
+          the rising homeless population is a stark indictment of the current
           council&apos;s failed policies and lack of effective leadership.
           Fremont deserves better. I am committed to transparency, ethical
           governance, and implementing practical solutions to address

@@ -144,7 +144,6 @@ const Navbar = () => {
     setMobileMenuOpen(false);
     setDropdownOpen(false);
   };
-  
 
   return (
     <NavContainer>

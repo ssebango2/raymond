@@ -118,8 +118,7 @@ export default function DonatePage() {
 
   return (
     <PageContainer>
-      <Header>
-      </Header>
+      <Header></Header>
       <ImageContainer>
         <Image
           src="/cover-photo.jpg"
@@ -132,34 +131,42 @@ export default function DonatePage() {
       <ContentContainer>
         <Subtitle>
           <BoldText>
-          As a proud longtime resident and product of Fremont's public school system, 
-          I, Raymond Liu, <br></br>am running for Fremont City Council to restore integrity and 
-          accountability to our local government.
+            As a proud longtime resident and product of Fremont&apos;s public
+            school system, I, Raymond Liu, <br></br>am running for Fremont City
+            Council to restore integrity and accountability to our local
+            government.
           </BoldText>
         </Subtitle>
         <Subtitle1>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city deserves leaders who prioritize the well-being of the community 
-          over personal gain. Unfortunately, that hasn&apos;t been the case in Fremont. 
-          The recent
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city deserves
+          leaders who prioritize the well-being of the community over personal
+          gain. Unfortunately, that hasn&apos;t been the case in Fremont. The
+          recent
           <StyledLink href="https://www.mercurynews.com/2022/03/30/former-fremont-city-manager-mark-danaj-charged-with-embezzlement/">
-          felony conviction of our former City Manager</StyledLink>
-          &nbsp;for fraud is a glaring 
-          example of corruption that has shaken our community&apos;s trust in local government. 
-          Even more shocking is that, despite his past misconduct, the current City Council 
-          approved more than $300,000 as a severance package for him—a decision that raises 
-          serious questions about their commitment to accountability and transparency. Furthermore, 
-          it&apos;s increasingly unlikely that Fremont will ever obtain our missing funds back, as 
-          according to Danaj&apos;s lawyer,&nbsp;
+            felony conviction of our former City Manager
+          </StyledLink>
+          &nbsp;for fraud is a glaring example of corruption that has shaken our
+          community&apos;s trust in local government. Even more shocking is
+          that, despite his past misconduct, the current City Council approved
+          more than $300,000 as a severance package for him—a decision that
+          raises serious questions about their commitment to accountability and
+          transparency. Furthermore, it&apos;s increasingly unlikely that
+          Fremont will ever obtain our missing funds back, as according to
+          Danaj&apos;s lawyer,&nbsp;
           <StyledLink href="https://www.siliconvalley.com/2024/07/18/disgraced-former-fremont-city-manager-kicked-out-of-government-association/">
-          it is unlikely he&apos;ll pay this back as he is an &quot;indigent&quot; college student. </StyledLink>
-          <br></br><br></br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&apos;m running for Fremont City Council because 
-          I believe our city needs a fresh start. It&apos;s time for 
-          leadership that values integrity and puts the interests of residents first. My campaign is focused on 
-          restoring trust in our local government by holding those in power accountable and ensuring that public 
-          funds are used responsibly. Fremont deserves better, and together, we can build a more honest, transparent,
-          and vibrant future for our city.
-
+            it is unlikely he&apos;ll pay this back as he is an
+            &quot;indigent&quot; college student.{' '}
+          </StyledLink>
+          <br></br>
+          <br></br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&apos;m running for
+          Fremont City Council because I believe our city needs a fresh start.
+          It&apos;s time for leadership that values integrity and puts the
+          interests of residents first. My campaign is focused on restoring
+          trust in our local government by holding those in power accountable
+          and ensuring that public funds are used responsibly. Fremont deserves
+          better, and together, we can build a more honest, transparent, and
+          vibrant future for our city.
         </Subtitle1>
       </ContentContainer>
       <Footer>

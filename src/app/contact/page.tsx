@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+// import { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const PageContainer = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ const HeaderText = styled.h1`
 `;
 
 const ContentContainer = styled.div`
-  width: 80%; 
+  width: 80%;
   max-width: 600px;
   background-color: white;
   border-radius: 8px;
@@ -139,12 +139,13 @@ const SocialIcon = styled.a`
   font-size: 1.5rem;
 `;
 
-  /* const handleSubmit = (e: React.FormEvent) => {
+/* const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
   };*/
 
-     {/* 
+{
+  /* 
       <Form onSubmit={handleSubmit}>
         <Input
           type="text"
@@ -170,7 +171,8 @@ const SocialIcon = styled.a`
         />
         <Button type="submit">Send</Button>
       </Form>
-      */}
+      */
+}
 
 export default function ContactPage() {
   return (
@@ -180,11 +182,12 @@ export default function ContactPage() {
       </Header>
       <ContentContainer>
         <Subtitle>
-          Feel free to click the link below and contact me with questions or volunteer opportunities to
-          support my race for the District 6 Fremont City Council seat.
+          Feel free to click the link below and contact me with questions or
+          volunteer opportunities to support my race for the District 6 Fremont
+          City Council seat.
         </Subtitle>
         <EmailIcon href="mailto:liurayray@gmail.com">
-          <img src="/mail.jpg" alt="Email" />
+          <Image src="/mail.jpg" alt="Email" width={640} height={640} />
         </EmailIcon>
       </ContentContainer>
       <Footer>
