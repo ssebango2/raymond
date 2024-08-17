@@ -34,8 +34,8 @@ const HeaderText = styled.h1`
   margin: 0; /* Ensure no extra margin */
 `;
 
-const FormContainer = styled.div`
-  width: 100%;
+const ContentContainer = styled.div`
+  width: 80%; 
   max-width: 600px;
   background-color: white;
   border-radius: 8px;
@@ -43,12 +43,33 @@ const FormContainer = styled.div`
   margin: 2rem 0;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+`;
+
+const EmailIcon = styled.a`
+  margin-top: 1rem; /* Add space between the text and the image */
+  img {
+    width: 100px; /* Adjust size of the icon */
+    height: 100px;
+  }
+
+  &:hover img {
+    opacity: 0.8; /* Slight opacity on hover */
+  }
 `;
 
 const FormTitle = styled.h2`
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #003f91;
+`;
+
+const Subtitle = styled.p`
+  font-size: 1.2rem;
+  color: #000112;
+  margin-bottom: 2rem;
 `;
 
 const FormSubtitle = styled.p`
@@ -118,64 +139,54 @@ const SocialIcon = styled.a`
   font-size: 1.5rem;
 `;
 
-export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  /* const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-  };
+  };*/
 
+     {/* 
+      <Form onSubmit={handleSubmit}>
+        <Input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <Input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        <TextArea
+          name="message"
+          placeholder="Message"
+          value={formData.message}
+          onChange={handleChange}
+          rows={6}
+        />
+        <Button type="submit">Send</Button>
+      </Form>
+      */}
+
+export default function ContactPage() {
   return (
     <PageContainer>
       <Header>
         <HeaderText>Contact Raymond</HeaderText>
       </Header>
-      <FormContainer>
-        <FormSubtitle>
-          Feel free to contact me with questions or volunteer opportunities to
+      <ContentContainer>
+        <Subtitle>
+          Feel free to click the link below and contact me with questions or volunteer opportunities to
           support my race for the District 6 Fremont City Council seat.
-        </FormSubtitle>
-        <Form onSubmit={handleSubmit}>
-          <Input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <Input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <TextArea
-            name="message"
-            placeholder="Message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={6}
-          />
-          <Button type="submit">Send</Button>
-        </Form>
-      </FormContainer>
+        </Subtitle>
+        <EmailIcon href="mailto:liurayray@gmail.com">
+          <img src="/mail.jpg" alt="Email" />
+        </EmailIcon>
+      </ContentContainer>
       <Footer>
         <FooterContent>
           <Image

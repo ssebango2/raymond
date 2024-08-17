@@ -33,7 +33,7 @@ const ContentContainer = styled.div`
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   padding: 2rem;
   text-align: center;
 `;
@@ -67,7 +67,7 @@ const Footer = styled.footer`
   padding: 2rem 0;
   text-align: center;
   color: white;
-  margin-top: 2rem;
+  margin-top: 0rem;
 `;
 
 const FooterContent = styled.div`
@@ -89,6 +89,20 @@ const SocialIcon = styled.a`
 
 const ImageContainer = styled.div`
   margin: 2rem 0; /* Add margin to separate the image from other content */
+`;
+
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
+  }
 `;
 
 export default function DonatePage() {
@@ -124,21 +138,27 @@ export default function DonatePage() {
           </BoldText>
         </Subtitle>
         <Subtitle1>
-          Our city deserves leaders who prioritize the well-being of the community 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city deserves leaders who prioritize the well-being of the community 
           over personal gain. Unfortunately, that hasn&apos;t been the case in Fremont. 
-          The recent felony conviction of our former City Manager for fraud is a glaring 
+          The recent
+          <StyledLink href="https://www.mercurynews.com/2022/03/30/former-fremont-city-manager-mark-danaj-charged-with-embezzlement/">
+          felony conviction of our former City Manager</StyledLink>
+          &nbsp;for fraud is a glaring 
           example of corruption that has shaken our community&apos;s trust in local government. 
           Even more shocking is that, despite his past misconduct, the current City Council 
           approved more than $300,000 as a severance package for him—a decision that raises 
           serious questions about their commitment to accountability and transparency. Furthermore, 
           it&apos;s increasingly unlikely that Fremont will ever obtain our missing funds back, as 
-          according to Danaj&apos;s lawyer, it is unlikely he&apos;ll pay this back as he is an &quot;indigent&quot; college student. 
+          according to Danaj&apos;s lawyer,&nbsp;
+          <StyledLink href="https://www.siliconvalley.com/2024/07/18/disgraced-former-fremont-city-manager-kicked-out-of-government-association/">
+          it is unlikely he&apos;ll pay this back as he is an &quot;indigent&quot; college student. </StyledLink>
           <br></br><br></br>
-          I&apos;m running for Fremont City Council because I believe our city needs a fresh start. It&apos;s time for 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&apos;m running for Fremont City Council because 
+          I believe our city needs a fresh start. It&apos;s time for 
           leadership that values integrity and puts the interests of residents first. My campaign is focused on 
           restoring trust in our local government by holding those in power accountable and ensuring that public 
           funds are used responsibly. Fremont deserves better, and together, we can build a more honest, transparent,
-           and vibrant future for our city.
+          and vibrant future for our city.
 
         </Subtitle1>
       </ContentContainer>
@@ -151,23 +171,6 @@ export default function DonatePage() {
             height={40}
             priority={false} // Lazy loads the image
           />
-          <SocialLinks>
-            <Link href="https://www.facebook.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook-f"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.instagram.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.linkedin.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin-in"></i>
-              </SocialIcon>
-            </Link>
-          </SocialLinks>
         </FooterContent>
       </Footer>
     </PageContainer>
