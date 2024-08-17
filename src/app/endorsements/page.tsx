@@ -201,17 +201,12 @@ export default function DonatePage() {
           </ImageContainer>
         <ContentContainer>
           <Subtitle>
-            &quot;Through my career at the Fresno Area Hispanic Foundation, I
-            have seen the impact of strong, community-focused leadership
-            firsthand. Raymond Liu exemplifies the qualities of a leader who
-            truly cares about the people he serves. His commitment to
-            inclusivity, transparency, and ethical governance resonates deeply
-            with the values of Fremont&apos;s diverse community. Raymond&apos;s
-            proactive approach to addressing the issues that matter most, from
-            combating corruption to supporting underrepresented groups, makes
-            him an outstanding candidate for Fremont City Council. I am proud to
-            endorse Raymond Liu, confident that he will bring positive change to
-            Fremont.&quot;
+          &quot;I first met Ray as a fellow student at UC Davis, where his dedication 
+          and passion for community service were immediately evident. Now, as a 
+          Grant Program Assistant with the Fresno Area Hispanic Foundation, 
+          I see those same qualities in his run for Fremont City Council. Ray&apos;s 
+          commitment to transparency, inclusivity, and ethical leadership is exactly 
+          what Fremont needs. I am proud to endorse Raymond Liu, knowing he will bring positive change to Fremont.&quot;
             <br></br>
             <br></br>
             <i>- Flavio Arechiga, Non Profit Organization Worker </i>
@@ -308,7 +303,7 @@ export default function DonatePage() {
           I fully back Raymond for Fremont&apos;s City Council and know he&apos;ll bring change that Fremont needs.&quot;
             <br />
             <br />
-            <i>- Aidan Ferrer - Teacher at Notre Dame High School </i>
+            <i>- Aidan Ferrer, Teacher at Notre Dame High School </i>
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>

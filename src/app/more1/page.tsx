@@ -99,13 +99,13 @@ const SocialIcon = styled.a`
   color: white;
   font-size: 1.5rem;
 `;
-
 const ImageContainer = styled.div`
+  margin: 2rem 0 0rem 0; /* 2rem margin above, 0rem margin below */
+  width: 80%;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  width: 100%;
-  margin: 2rem 0; /* Add margin to separate images */
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center;     /* Centers the image vertically */
+  height: 100%;            /* Ensures the container has height for vertical centering */
 `;
 
 export default function DonatePage() {
@@ -126,20 +126,14 @@ export default function DonatePage() {
           WHERE IS DISTRICT 6?<br></br>
         </HeaderText>
       </Header>
-      <ContentContainer2>
         <ImageContainer>
           <Image
             src="/district6.jpg"
             alt="endorsement page"
-            width={873}
-            height={905}
-            priority={false} // Lazy loads the image
-            layout="responsive"
-
-
+            width={655}
+            height={680}
           />
         </ImageContainer>
-      </ContentContainer2>
       <ContentWrapper>
         <ContentContainer>
           <Subtitle>
