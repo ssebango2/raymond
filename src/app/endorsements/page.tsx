@@ -186,16 +186,7 @@ export default function DonatePage() {
           ENDORSEMENTS<br></br>
         </HeaderText>
       </Header>
-      <ContentContainer2>
-        <ImageContainer>
-          <Image
-            src="/raymondsenatepic.jpg"
-            alt="endorsement page"
-            width={806}
-            height={605}
-          />
-        </ImageContainer>
-      </ContentContainer2>
+      <ContentContainer2></ContentContainer2>
       <ContentWrapper>
         <ImageContainer>
           <Image
@@ -203,21 +194,19 @@ export default function DonatePage() {
             alt="endorsement image"
             width={400}
             height={400}
+            priority={false} // Lazy loads the image
           />
         </ImageContainer>
         <ContentContainer>
           <Subtitle>
-            &quot;Through my career at the Fresno Area Hispanic Foundation, I
-            have seen the impact of strong, community-focused leadership
-            firsthand. Raymond Liu exemplifies the qualities of a leader who
-            truly cares about the people he serves. His commitment to
-            inclusivity, transparency, and ethical governance resonates deeply
-            with the values of Fremont&apos;s diverse community. Raymond&apos;s
-            proactive approach to addressing the issues that matter most, from
-            combating corruption to supporting underrepresented groups, makes
-            him an outstanding candidate for Fremont City Council. I am proud to
-            endorse Raymond Liu, confident that he will bring positive change to
-            Fremont.&quot;
+            &quot;I first met Ray as a fellow student at UC Davis, where his
+            dedication and passion for community service were immediately
+            evident. Now, as a Grant Program Assistant with the Fresno Area
+            Hispanic Foundation, I see those same qualities in his run for
+            Fremont City Council. Ray&apos;s commitment to transparency,
+            inclusivity, and ethical leadership is exactly what Fremont needs. I
+            am proud to endorse Raymond Liu, knowing he will bring positive
+            change to Fremont.&quot;
             <br></br>
             <br></br>
             <i>- Flavio Arechiga, Non Profit Organization Worker </i>
@@ -232,6 +221,7 @@ export default function DonatePage() {
             alt="endorsement image"
             width={384}
             height={288}
+            priority={false} // Lazy loads the image
           />
         </ImageContainer>
         {/* Add more images here if needed */}
@@ -254,6 +244,7 @@ export default function DonatePage() {
             alt="endorsement image"
             width={384}
             height={288}
+            priority={false}
           />
         </ImageContainer>
         <ContentContainer>
@@ -278,6 +269,7 @@ export default function DonatePage() {
             alt="endorsement image"
             width={360}
             height={480}
+            priority={false} // Lazy loads the image
           />
         </ImageContainer>
         {/* Add more images here if needed */}
@@ -304,6 +296,7 @@ export default function DonatePage() {
             alt="endorsement image"
             width={440}
             height={330}
+            priority={false} // Lazy loads the image
           />
         </ImageContainer>
         {/* Add more images here if needed */}
@@ -318,7 +311,7 @@ export default function DonatePage() {
             Fremont needs.&quot;
             <br />
             <br />
-            <i>- Aidan Ferrer - Teacher at Notre Dame High School </i>
+            <i>- Aidan Ferrer, Teacher at Notre Dame High School </i>
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>
@@ -329,6 +322,7 @@ export default function DonatePage() {
             alt="endorsement image"
             width={440}
             height={330}
+            priority={false} // Lazy loads the image
           />
         </ImageContainer>
         {/* Add more images here if needed */}
@@ -354,6 +348,7 @@ export default function DonatePage() {
             alt="endorsement image"
             width={480}
             height={320}
+            priority={false} // Lazy loads the image
           />
         </ImageContainer>
         {/* Add more images here if needed */}
@@ -379,6 +374,7 @@ export default function DonatePage() {
             alt="Campaign Logo"
             width={180}
             height={40}
+            priority={false} // Lazy loads the image
           />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>

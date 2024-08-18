@@ -33,7 +33,7 @@ const ContentContainer = styled.div`
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   padding: 2rem;
   text-align: center;
 `;
@@ -50,23 +50,15 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
-  color: #666;
+  color: #000112;
   margin-bottom: 2rem;
 `;
 
-const DonateButton = styled.a`
-  display: inline-block;
-  background-color: #d32f2f;
-  color: white;
-  padding: 1rem 2rem;
+const Subtitle1 = styled.p`
   font-size: 1.2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #b22a25;
-  }
+  color: #000328;
+  margin-bottom: 2rem;
+  text-align: left;
 `;
 
 const Footer = styled.footer`
@@ -75,7 +67,7 @@ const Footer = styled.footer`
   padding: 2rem 0;
   text-align: center;
   color: white;
-  margin-top: 2rem;
+  margin-top: 0rem;
 `;
 
 const FooterContent = styled.div`
@@ -99,6 +91,20 @@ const ImageContainer = styled.div`
   margin: 2rem 0; /* Add margin to separate the image from other content */
 `;
 
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
+  }
+`;
+
 export default function DonatePage() {
   const [mounted, setMounted] = useState(false);
 
@@ -112,37 +118,56 @@ export default function DonatePage() {
 
   return (
     <PageContainer>
-      <Header>
-        <HeaderText>RAYMOND LIU FOR FREMONT CITY COUNCIL</HeaderText>
-      </Header>
+      <Header></Header>
       <ImageContainer>
         <Image
-          src="/Fremont.jpg"
+          src="/cover-photo.jpg"
           alt="About Raymond"
           width={975}
           height={650}
+          layout="responsive"
         />
       </ImageContainer>
       <ContentContainer>
         <Subtitle>
           <BoldText>
-            Hello, my name is Raymond Liu. Thank you for visiting my website.
+            As a proud longtime resident and product of Fremont&apos;s public
+            school system, I, Raymond Liu, <br></br>am running for Fremont City
+            Council to restore integrity and accountability to our local
+            government.
           </BoldText>
-          <br></br>
-          <br></br>I was born and raised in the Bay Area, completing his K-12
-          education in public schools right here in the Bay.
-          <br></br>
-          Like many others, I found the cost of a 4-year university daunting,
-          and I instead went to Ohlone College. <br></br> I graduated with 3
-          Associate of Science degrees in Math, Natural Sciences and Computer
-          Science.
-          <br></br>
-          In 2017 I transferred to UC Davis, to complete my Bachelors of Science
-          in Computer Science. <br></br>I graduated in the spring of 2019, and
-          since then, I&apos;ve worked as an Engineer at various companies
-          before <br></br>deciding to run for office in order to give back to
-          the community who have helped me.
         </Subtitle>
+        <Subtitle1>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city deserves
+          leaders who prioritize the well-being of the community over personal
+          gain. Unfortunately, that hasn&apos;t been the case in Fremont. The
+          recent
+          <StyledLink href="https://www.mercurynews.com/2022/03/30/former-fremont-city-manager-mark-danaj-charged-with-embezzlement/">
+            felony conviction of our former City Manager
+          </StyledLink>
+          &nbsp;for fraud is a glaring example of corruption that has shaken our
+          community&apos;s trust in local government. Even more shocking is
+          that, despite his past misconduct, the current City Council approved
+          more than $300,000 as a severance package for him—a decision that
+          raises serious questions about their commitment to accountability and
+          transparency. Furthermore, it&apos;s increasingly unlikely that
+          Fremont will ever obtain our missing funds back, as according to
+          Danaj&apos;s lawyer,&nbsp;
+          <StyledLink href="https://www.siliconvalley.com/2024/07/18/disgraced-former-fremont-city-manager-kicked-out-of-government-association/">
+            it is unlikely he&apos;ll pay this back as he is an
+            &quot;indigent&quot; college student.{' '}
+          </StyledLink>
+          <br></br>
+          <br></br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&apos;m running for
+          Fremont City Council because I believe our city needs a fresh start.
+          It&apos;s time for leadership that values integrity and puts the
+          interests of residents first. My campaign is focused on restoring
+          trust in our local government by holding those in power accountable
+          and ensuring that public funds are used responsibly. Fremont deserves
+          better, and together, we can build a more honest, transparent, and
+          vibrant future for our city.
+        </Subtitle1>
       </ContentContainer>
       <Footer>
         <FooterContent>
@@ -151,24 +176,8 @@ export default function DonatePage() {
             alt="Campaign Logo"
             width={180}
             height={40}
+            priority={false} // Lazy loads the image
           />
-          <SocialLinks>
-            <Link href="https://www.facebook.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook-f"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.instagram.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.linkedin.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin-in"></i>
-              </SocialIcon>
-            </Link>
-          </SocialLinks>
         </FooterContent>
       </Footer>
     </PageContainer>

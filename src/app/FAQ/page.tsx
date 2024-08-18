@@ -124,18 +124,15 @@ export default function DonatePage() {
       </ContentContainer>
       <ContentContainer>
         <Subtitle>
-          <BoldText>Question content number 1?</BoldText>
-          <br />
-          <br />
-          Answer content blah blah blah blah ....
+          <br></br>
+          <br></br>
         </Subtitle>
       </ContentContainer>
       <ContentContainer>
         <Subtitle>
-          <BoldText>Question content number 1?</BoldText>
+          <BoldText></BoldText>
           <br />
           <br />
-          Answer content blah blah blah blah ....
         </Subtitle>
       </ContentContainer>
       <Footer>
@@ -145,6 +142,7 @@ export default function DonatePage() {
             alt="Campaign Logo"
             width={180}
             height={40}
+            priority={false} // Lazy loads the image
           />
           <SocialLinks>
             <Link href="https://www.facebook.com" passHref>
