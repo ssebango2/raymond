@@ -38,42 +38,11 @@ const ContentContainer = styled.div`
   text-align: center;
 `;
 
-const BoldText = styled.span`
-  font-weight: bold;
-`;
-
-const Title = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #003f91;
-`;
-
-const Subtitle = styled.p`
-  font-size: 1.2rem;
-  color: #000112;
-  margin-bottom: 2rem;
-`;
-
 const Subtitle1 = styled.p`
   font-size: 1.2rem;
   color: #000328;
   margin-bottom: 2rem;
   text-align: left;
-`;
-
-const DonateButton = styled.a`
-  display: inline-block;
-  background-color: #d32f2f;
-  color: white;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #b22a25;
-  }
 `;
 
 const Footer = styled.footer`
@@ -92,34 +61,10 @@ const FooterContent = styled.div`
   gap: 2rem;
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
-const SocialIcon = styled.a`
-  color: white;
-  font-size: 1.5rem;
-`;
-
 const ImageContainer = styled.div`
   margin: 2rem 0; /* Add margin to separate the image from other content */
   width: 80%;
-  layout: grid;
-`;
-
-const StyledLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #007bff; /* Default link color */
-  font-weight: bold;
-  position: relative;
-
-  &:hover {
-    color: #0056b3; /* Hover color */
-    text-decoration: underline;
-  }
+  display: grid;
 `;
 
 export default function DonatePage() {
@@ -140,36 +85,39 @@ export default function DonatePage() {
       </Header>
       <ImageContainer>
         <Image
-          src="/Fremont.jpg"
+          src="/aboutraymond.jpg"
           alt="About Raymond"
-          width={1500}
-          height={1000}
+          width={1400}
+          height={2100}
           layout="responsive"
         />
       </ImageContainer>
       <ContentContainer>
-        <Subtitle>
-          <BoldText>
-            As a proud longtime resident and product of Fremont&apos;s public
-            school system, I, Raymond Liu, am running for Fremont City Council
-            to restore integrity and accountability to our local government.
-          </BoldText>{' '}
-        </Subtitle>
         <Subtitle1>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city has been
-          rocked by scandals, most notably the&nbsp;
-          <StyledLink href="https://www.mercurynews.com/2022/03/30/former-fremont-city-manager-mark-danaj-charged-with-embezzlement/">
-            former City Manager&apos;s fraud
-          </StyledLink>
-          &nbsp; conviction due to misuse of public funds, highlighting a
-          deep-rooted culture of corruption that has taken place. Additionally,
-          the rising homeless population is a stark indictment of the current
-          council&apos;s failed policies and lack of effective leadership.
-          Fremont deserves better. I am committed to transparency, ethical
-          governance, and implementing practical solutions to address
-          homelessness. Together, we can reclaim our city&apos;s promise and
-          build a better future for all residents. Vote for Raymond Liu for
-          Fremont City Council.
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I was born and raised
+          in the Bay Area, and my journey began right here in Fremont, where I
+          attended our very own public schools, first junior high and later
+          Irvington High School. Like many others, I found the cost of a 4-year
+          university daunting, and so after graduating high school, I enrolled
+          at Ohlone College in Fremont, where I earned three associate degrees
+          in Math, Natural Sciences, and Computer Science.
+          <br />
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seeking to further my
+          education, I then transferred to UC Davis, where I completed my
+          Bachelor of Science&apos;s degree in Computer Science, graduating in
+          the spring of 2019. Since then, I&apos;ve been working as a Software
+          Engineer, applying my skills and knowledge to solve complex problems
+          and contribute to innovative projects.
+          <br />
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout my life,
+          Fremont has been my home, and it&apos;s where I&apos;ve grown both
+          personally and professionally. Now, I&apos;m running for City Council
+          because I&apos;m committed to giving back to the community that has
+          given me so much. I&apos;m dedicated to ensuring that Fremont
+          continues to thrive and that all residents have the opportunity to
+          succeed.
         </Subtitle1>
       </ContentContainer>
       <Footer>

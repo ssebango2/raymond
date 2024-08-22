@@ -141,7 +141,7 @@ export default function DonatePage() {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city deserves
           leaders who prioritize the well-being of the community over personal
           gain. Unfortunately, that hasn&apos;t been the case in Fremont. The
-          recent
+          recent&nbsp;
           <StyledLink href="https://www.mercurynews.com/2022/03/30/former-fremont-city-manager-mark-danaj-charged-with-embezzlement/">
             felony conviction of our former City Manager
           </StyledLink>
@@ -157,6 +157,17 @@ export default function DonatePage() {
             it is unlikely he&apos;ll pay this back as he is an
             &quot;indigent&quot; college student.{' '}
           </StyledLink>
+          <br></br>
+          <br></br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the
+          rising crime rate is a sharp indictment on the current council&apos;s
+          failed policies. Since 2019,{' '}
+          <StyledLink href="https://www.fremontpolice.gov/home/showpublisheddocument/646/637817280148230000/">
+            the crime rate has risen sharply
+          </StyledLink>{' '}
+          and the current council&apos;s inability to address these critical
+          issues has left our community vulnerable and struggling. Fremont
+          deserves better.
           <br></br>
           <br></br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&apos;m running for
