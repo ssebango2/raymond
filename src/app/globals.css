@@ -11,7 +11,8 @@
   font-family: 'Roboto', sans-serif; /* Apply Roboto to all elements */
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
