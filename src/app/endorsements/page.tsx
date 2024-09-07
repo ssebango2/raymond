@@ -367,6 +367,87 @@ export default function DonatePage() {
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/mcgrath.jpg"
+            alt="endorsement image"
+            width={405}
+            height={300}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
+        <ContentContainer>
+          <Subtitle>
+            &quot;I believe in leaders who serve with integrity, compassion, and
+            a genuine commitment to the well-being of their community. Raymond
+            Liu embodies these values in his run for Fremont City Council. His
+            dedication to addressing corruption, supporting those in need, and
+            restoring trust in our local government is exactly what Fremont
+            requires. I wholeheartedly endorse Raymond Liu, knowing he will lead
+            with the moral clarity and ethical conviction that Fremont
+            deserves.&quot;
+            <br />
+            <br />
+            <i>- Rev. Matthew Mcgrath</i>
+          </Subtitle>
+        </ContentContainer>
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/ryan.jpg"
+            alt="endorsement image"
+            width={375}
+            height={500}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
+        <ContentContainer>
+          <Subtitle>
+            &quot;As the owner of a small hobby store in the Bay, I&apos;ve seen
+            firsthand how challenging it can be to run a small business. Raymond
+            understands the struggles we face and is committed to supporting
+            local businesses by promoting a fair and honest government. His
+            focus on tackling corruption and improving the local economy makes
+            him the right choice for City Council. I fully endorse Raymond Liu,
+            confident that he will help small businesses like mine thrive in a
+            fairer, more transparent Fremont.&quot;
+            <br />
+            <br />
+            <i>- Ryan Sixberry, owner of Card Art</i>
+          </Subtitle>
+        </ContentContainer>
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/morales.jpg"
+            alt="endorsement image"
+            width={400}
+            height={300}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        {/* Add more images here if needed */}
+        <ContentContainer>
+          <Subtitle>
+            &quot;As a preschool teacher, I know the importance of creating a
+            safe, supportive environment where everyone has a chance to thrive.
+            Ray understands this at a community level. His commitment to
+            addressing corruption and advocating for families in Fremont shows
+            his dedication to creating a better future for our children. I
+            proudly endorse Raymond Liu for Fremont City Council, knowing he
+            will be a strong advocate for education, families, and
+            transparency.&quot;
+            <br />
+            <br />
+            <i>- Alexandro Morales, preschool teacher</i>
+          </Subtitle>
+        </ContentContainer>
+      </ContentWrapper>
       <Footer>
         <FooterContent>
           <Image
