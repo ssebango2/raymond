@@ -150,7 +150,7 @@ const Navbar = () => {
       <Logo>
         <Image
           src="/newLogo.jpg"
-          alt="Raymond Liu Logo"
+          alt="Raymond Liu for Fremont City Council"
           width={180}
           height={40}
         />
