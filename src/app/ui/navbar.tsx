@@ -148,12 +148,14 @@ const Navbar = () => {
   return (
     <NavContainer>
       <Logo>
-        <Image
-          src="/newLogo.jpg"
-          alt="Raymond Liu for Fremont City Council"
-          width={180}
-          height={40}
-        />
+        <Link href="/" passHref>
+          <Image
+            src="/newLogo.jpg"
+            alt="Raymond Liu for Fremont City Council"
+            width={180}
+            height={40}
+          />
+        </Link>
       </Logo>
       <HamburgerIcon onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
         <span></span>

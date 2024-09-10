@@ -103,6 +103,14 @@ const Subtitle = styled.p`
   margin-bottom: 2rem;
 `;
 
+const Subtitle1 = styled.p`
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  color: #666;
+  width: 60%;
+  text-align: center;
+`;
+
 const ImageWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -187,6 +195,16 @@ export default function DonatePage() {
         </HeaderText>
       </Header>
       <ContentContainer2></ContentContainer2>
+      <Subtitle1>
+        <BoldText>
+          Why Do Teachers, Police Officers, and District 6 Residents Endorse
+          Raymond Liu?
+        </BoldText>
+        <br></br>
+        <br></br>
+        Discover the reasons behind the widespread support for Raymond Liu from
+        educators, law enforcement, and your fellow community members.
+      </Subtitle1>
       <ContentWrapper>
         <ImageContainer>
           <Image
