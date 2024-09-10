@@ -62,8 +62,9 @@ const FooterContent = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  margin: 2rem 0; /* Add margin to separate the image from other content */
-  width: 80%;
+  margin: 2rem; /* Add margin to separate the image from other content */
+  width: 50%;
+  max-width: 50%;
   display: grid;
 `;
 
@@ -87,8 +88,8 @@ export default function DonatePage() {
         <Image
           src="/aboutraymond.jpg"
           alt="About Raymond"
-          width={1400}
-          height={2100}
+          width={1000}
+          height={1500}
           layout="responsive"
         />
       </ImageContainer>
