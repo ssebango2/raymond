@@ -1,9 +1,7 @@
 'use client';
 
-// import { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-// import Link from 'next/link';
 
 const PageContainer = styled.div`
   display: flex;
