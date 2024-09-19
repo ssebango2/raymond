@@ -197,7 +197,7 @@ export default function ContactPage() {
             alt="Campaign Logo"
             width={180}
             height={40}
-            priority={false} // Lazy loads the image
+            priority={false} // Lazy loads the imag
           />
         </FooterContent>
       </Footer>
