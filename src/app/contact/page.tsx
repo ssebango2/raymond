@@ -186,7 +186,7 @@ export default function ContactPage() {
           volunteer opportunities to support my race for the District 6 Fremont
           City Council seat.
         </Subtitle>
-        <EmailIcon href="mailto:liurayray@gmail.com">
+        <EmailIcon href="mailto:raymond@electraymondliu.com  ">
           <Image src="/mail.jpg" alt="Email" width={640} height={640} />
         </EmailIcon>
       </ContentContainer>
