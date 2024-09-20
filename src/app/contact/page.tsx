@@ -183,7 +183,7 @@ const SocialIcon = styled.a`
           rows={6}
         />
         <Button type="submit">Send</Button>
-      </Form>
+      </Form>.
       */
 }
 
