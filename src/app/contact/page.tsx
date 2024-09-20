@@ -2,6 +2,19 @@
 
 import styled from 'styled-components';
 import Image from 'next/image';
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
+  }
+`;
 
 const PageContainer = styled.div`
   display: flex;
@@ -180,9 +193,13 @@ export default function ContactPage() {
       </Header>
       <ContentContainer>
         <Subtitle>
-          Feel free to click the link below and contact me with questions or
-          volunteer opportunities to support my race for the District 6 Fremont
-          City Council seat.
+          Feel free to email me at{' '}
+          <StyledLink href="mailto:raymond@electraymondliu.com  ">
+            raymond@electraymondliu.com
+          </StyledLink>{' '}
+          or click the link below and contact me with questions or volunteer
+          opportunities to support my race for the District 6 Fremont City
+          Council seat.
         </Subtitle>
         <EmailIcon href="mailto:raymond@electraymondliu.com  ">
           <Image src="/mail.jpg" alt="Email" width={640} height={640} />
@@ -191,10 +208,10 @@ export default function ContactPage() {
       <Footer>
         <FooterContent>
           <Image
-            src="/newLogo.jpg"
+            src="/logo2.jpg"
             alt="Campaign Logo"
-            width={180}
-            height={40}
+            width={450}
+            height={100}
             priority={false} // Lazy loads the image
           />
         </FooterContent>

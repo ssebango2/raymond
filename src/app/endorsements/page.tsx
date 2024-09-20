@@ -197,14 +197,41 @@ export default function DonatePage() {
       <ContentContainer2></ContentContainer2>
       <Subtitle1>
         <BoldText>
-          Why Do Teachers, Police Officers, and District 6 Residents Endorse
+          Why Do Teachers, Elected Officials, and District 6 Residents Endorse
           Raymond Liu?
         </BoldText>
         <br></br>
         <br></br>
         Discover the reasons behind the widespread support for Raymond Liu from
-        educators, law enforcement, and your fellow community members.
+        educators, public servants, and your fellow community members.
       </Subtitle1>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/yang.jpg"
+            alt="endorsement image"
+            width={400}
+            height={600}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;As a current Fremont City Councilmember, I am proud to endorse
+            Raymond Liu for Fremont City Council, District 6. Raymond brings
+            fresh ideas and a strong commitment to transparency and
+            accountability. His passion for addressing the issues that matter
+            most to our community, including homelessness, education, and public
+            safety, is evident in everything he does. I believe Raymond is the
+            right choice to represent District 6 and to help build a better
+            future for Fremont.&quot;
+            <br></br>
+            <br></br>
+            <i>- Yang Shao, Fremont City Councilmember </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
           <Image
@@ -469,10 +496,10 @@ export default function DonatePage() {
       <Footer>
         <FooterContent>
           <Image
-            src="/newLogo.jpg"
+            src="/logo2.jpg"
             alt="Campaign Logo"
-            width={180}
-            height={40}
+            width={450}
+            height={100}
             priority={false} // Lazy loads the image
           />
           <SocialLinks>

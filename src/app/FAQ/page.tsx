@@ -54,6 +54,13 @@ const Subtitle = styled.p`
   margin-bottom: 2rem;
 `;
 
+const Subtitle1 = styled.p`
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: left;
+`;
+
 const DonateButton = styled.a`
   display: inline-block;
   background-color: #d32f2f;
@@ -117,10 +124,32 @@ export default function DonatePage() {
       </Header>
       <ContentContainer>
         <Subtitle>
-          <BoldText>Coming soon</BoldText>
-          <br />
-          <br />
+          <BoldText> If elected, what are your top 3 priorities?</BoldText>
+          <br></br>
         </Subtitle>
+        <Subtitle1>
+          <BoldText>1. Eliminating the Culture of Corruption: </BoldText>
+          Fremont deserves leadership that is honest and accountable. I will
+          work to restore transparency in local government and put an end to the
+          misuse of public funds, ensuring that our city serves its
+          residents—not personal interests.
+          <br></br>
+          <br></br>
+          <BoldText>2. Addressing the Homelessness Crisis: </BoldText>While we
+          must show compassion to those who need help, we cannot ignore the fact
+          that many homeless individuals contribute to crime and make our public
+          spaces unsafe. I will push for stronger enforcement to ensure that
+          those who break the law are held accountable. We need a balanced
+          approach that combines housing and services with firm action against
+          those who threaten the safety of our community.
+          <br></br>
+          <br></br>
+          <BoldText>3. Improving Our Public Schools: </BoldText> As a product of
+          Fremont’s public school system, I am committed to supporting our
+          schools. I will advocate for better funding and resources to ensure
+          that every child has access to a high-quality education, preparing
+          them for a brighter future.
+        </Subtitle1>
       </ContentContainer>
       <ContentContainer>
         <Subtitle>

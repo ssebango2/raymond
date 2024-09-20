@@ -65,8 +65,9 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
-  color: #666;
+  color: #000328;
   margin-bottom: 2rem;
+  text-align: left;
 `;
 
 const ImageWrapper = styled.div`
@@ -78,7 +79,7 @@ const ImageWrapper = styled.div`
 `;
 const Footer = styled.footer`
   width: 100%;
-  background-color: #003f91;
+  background-color: #0a2b61;
   padding: 2rem 0;
   text-align: center;
   color: white;
@@ -99,6 +100,26 @@ const SocialIcon = styled.a`
   color: white;
   font-size: 1.5rem;
 `;
+
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
+  }
+`;
+
+const StyledImage = styled.img`
+  width: 60%; /* Image takes up 100% of the container width */
+  height: auto; /* Maintain aspect ratio */
+`;
+
 const ImageContainer = styled.div`
   margin: 2rem 0 0rem 0; /* 2rem margin above, 0rem margin below */
   width: 80%;
@@ -127,28 +148,32 @@ export default function DonatePage() {
         </HeaderText>
       </Header>
       <ImageContainer>
-        <Image
+        <StyledImage
           src="/district6.jpg"
-          alt="endorsement page"
-          width={655}
-          height={680}
+          alt="endorsement image"
+          width={633}
+          height={950}
         />
       </ImageContainer>
       <ContentWrapper>
         <ContentContainer>
           <Subtitle>
-            Fremont&apos;s district 6 includes the area within the blue lines
-            above
+            Fremont&apos;s District 6 includes the area within the blue lines.
+            Check this{' '}
+            <StyledLink href="https://www.arcgis.com/apps/webappviewer/index.html?id=039f67a84c074c089e1f98739f8c39b3&extent=-13608799.4331%2C4496614.1707%2C-13550707.2916%2C4529023.4707%2C102100">
+              link
+            </StyledLink>{' '}
+            to see if you are in District 6!
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>
       <Footer>
         <FooterContent>
           <Image
-            src="/newLogo.jpg"
+            src="/logo2.jpg"
             alt="Campaign Logo"
-            width={180}
-            height={40}
+            width={450}
+            height={100}
             priority={false} // Lazy loads the image
           />
         </FooterContent>

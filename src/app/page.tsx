@@ -88,7 +88,17 @@ const SocialIcon = styled.a`
 `;
 
 const ImageContainer = styled.div`
-  margin: 2rem 0; /* Add margin to separate the image from other content */
+  margin: 2rem; /* Add margin to separate the image from other content */
+  width: 100%; /* Make container full width */
+  max-width: 100%; /* Limit the container's width to 100% */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+`;
+
+const StyledImage = styled.img`
+  width: 50%; /* Image takes up 100% of the container width */
+  height: auto; /* Maintain aspect ratio */
 `;
 
 const StyledLink = styled.a`
@@ -120,12 +130,11 @@ export default function DonatePage() {
     <PageContainer>
       <Header></Header>
       <ImageContainer>
-        <Image
+        <StyledImage
           src="/cover-photo.jpg"
           alt="About Raymond"
           width={975}
           height={650}
-          layout="responsive"
         />
       </ImageContainer>
       <ContentContainer>
@@ -183,10 +192,10 @@ export default function DonatePage() {
       <Footer>
         <FooterContent>
           <Image
-            src="/newLogo.jpg"
+            src="/logo2.jpg"
             alt="Campaign Logo"
-            width={180}
-            height={40}
+            width={450}
+            height={100}
             priority={false} // Lazy loads the image
           />
         </FooterContent>
