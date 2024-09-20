@@ -17,7 +17,6 @@ const StyledLink = styled.a`
   }
 `;
 
-
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
