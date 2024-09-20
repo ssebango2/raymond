@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import Image from 'next/image';
+
 const StyledLink = styled.a`
   display: inline-flex;
   align-items: center;
@@ -15,6 +16,7 @@ const StyledLink = styled.a`
     text-decoration: underline;
   }
 `;
+
 
 const PageContainer = styled.div`
   display: flex;
