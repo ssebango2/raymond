@@ -1,9 +1,7 @@
 'use client';
 
-// import { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-// import Link from 'next/link';
 
 const PageContainer = styled.div`
   display: flex;
@@ -186,7 +184,7 @@ export default function ContactPage() {
           volunteer opportunities to support my race for the District 6 Fremont
           City Council seat.
         </Subtitle>
-        <EmailIcon href="mailto:liurayray@gmail.com">
+        <EmailIcon href="mailto:raymond@electraymondliu.com  ">
           <Image src="/mail.jpg" alt="Email" width={640} height={640} />
         </EmailIcon>
       </ContentContainer>
@@ -197,7 +195,7 @@ export default function ContactPage() {
             alt="Campaign Logo"
             width={180}
             height={40}
-            priority={false} // Lazy loads the imag
+            priority={false} // Lazy loads the image
           />
         </FooterContent>
       </Footer>

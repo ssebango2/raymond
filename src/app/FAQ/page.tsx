@@ -138,10 +138,10 @@ export default function DonatePage() {
       <Footer>
         <FooterContent>
           <Image
-            src="/newLogo.jpg"
+            src="/logo2.jpg"
             alt="Campaign Logo"
-            width={180}
-            height={40}
+            width={450}
+            height={100}
             priority={false} // Lazy loads the image
           />
           <SocialLinks>
