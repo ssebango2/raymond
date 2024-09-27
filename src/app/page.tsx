@@ -50,7 +50,7 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
-  color: #000112;
+  color: #48494b;
   margin-bottom: 2rem;
 `;
 

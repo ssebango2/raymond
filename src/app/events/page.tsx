@@ -196,46 +196,11 @@ export default function DonatePage() {
   return (
     <PageContainer>
       <Header>
-        <HeaderText>ABOUT RAYMOND</HeaderText>
+        <HeaderText>UPCOMING EVENTS</HeaderText>
       </Header>
-      <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/aboutraymond.jpg"
-            alt="endorsement image"
-            width={633}
-            height={950}
-          />
-        </ImageContainer>
-        <ContentContainer>
-          <Subtitle1>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I was born and
-            raised in the Bay Area, and my journey began right here in Fremont,
-            where I attended our very own public schools, first junior high and
-            later Irvington High School. Like many others, I found the cost of a
-            4-year university daunting, and so after graduating high school, I
-            enrolled at Ohlone College in Fremont, where I earned three
-            associate degrees in Math, Natural Sciences, and Computer Science.
-            <br />
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seeking to further
-            my education, I then transferred to UC Davis, where I completed my
-            Bachelor of Science&apos;s degree in Computer Science, graduating in
-            the spring of 2019. Since then, I&apos;ve been working as a Software
-            Engineer, applying my skills and knowledge to solve complex problems
-            and contribute to innovative projects.
-            <br />
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throughout my life,
-            Fremont has been my home, and it&apos;s where I&apos;ve grown both
-            personally and professionally. Now, I&apos;m running for City
-            Council because I&apos;m committed to giving back to the community
-            that has given me so much. I&apos;m dedicated to ensuring that
-            Fremont continues to thrive and that all residents have the
-            opportunity to succeed.
-          </Subtitle1>
-        </ContentContainer>
-      </ContentWrapper>
+      <ImageContainer>
+        <Image src="/event.jpg" alt="event image" width={595} height={842} />
+      </ImageContainer>
       <Footer>
         <FooterContent>
           <Image

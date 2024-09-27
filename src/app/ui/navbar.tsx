@@ -178,11 +178,12 @@ const Navbar = () => {
         <NavItem onClick={handleLinkClick}>
           <Link href="/contact">CONTACT</Link>
         </NavItem>
-        {/*}
         <NavItem onClick={handleLinkClick}>
           <Link href="/donate">DONATE</Link>
-        </NavItem> 
-  */}
+        </NavItem>
+        <NavItem onClick={handleLinkClick}>
+          <Link href="/events">EVENTS</Link>
+        </NavItem>
         <NavItem onClick={() => setDropdownOpen(!dropdownOpen)}>
           <MoreContainer>MORE </MoreContainer>
           {dropdownOpen && (

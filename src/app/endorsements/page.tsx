@@ -35,25 +35,25 @@ const HeaderText = styled.h1`
 `;
 
 const ContentWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  display: flex;
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 2rem 0;
+  align-items: center;
+  justify-content: center; /* Horizontally centers the items if needed */
 `;
 
 const ContentContainer = styled.div`
-  width: 100%; /* Adjust the width as needed */
+  width: auto; /* Adjust width to be flexible */
   background-color: #f9f9f9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  text-align: left; /* Left-align text */
-  margin-right: 2rem; /* Add space between content and image */
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  text-align: left;
+  margin: 0 2rem 2rem 0; /* Add margin for spacing between items */
+  display: inline-block; /* Allow it to take up only as much space as needed */
+  vertical-align: top; /* Align container to the top */
+  max-width: 600px; /* You can adjust this value based on your layout */
 `;
 
 const ContentContainer2 = styled.div`
@@ -205,6 +205,31 @@ export default function DonatePage() {
         Discover the reasons behind the widespread support for Raymond Liu from
         educators, public servants, and your fellow community members.
       </Subtitle1>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/mei.jpg"
+            alt="endorsement image"
+            width={364}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;As Mayor of Fremont, I’m proud to endorse Raymond Liu for
+            Fremont City Council, District 6. Raymond’s commitment to
+            transparency, accountability, and addressing key issues like
+            homelessness and public safety makes him the right choice for our
+            community. Raymond will serve Fremont with integrity and
+            dedication.&quot;
+            <br></br>
+            <br></br>
+            <i>— Lily Mei, Mayor of Fremont </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
           <Image

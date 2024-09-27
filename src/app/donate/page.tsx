@@ -13,25 +13,32 @@ const PageContainer = styled.div`
   align-items: center;
   min-height: 100vh;
   background-color: #f9f9f9;
-  padding: 0; /* Remove padding */
+  padding: 0;
 `;
 
 const Header = styled.header`
   width: 100%;
-  background-color: #0a2b61;
-  padding: 2rem 0;
+  height: 300px; /* Set the desired height */
+  background-image: url('/nat.jpg');
+  background-size: cover;
+  background-position: center; /* Align the image to the center */
+  background-repeat: no-repeat;
   text-align: center;
   color: white;
   margin: 0; /* Ensure no extra margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const HeaderText = styled.h1`
   font-size: 2.5rem;
-  margin: 0; /* Ensure no extra margin */
+  margin: 0;
 `;
 
 const ContentContainer = styled.div`
-  width: 100%; /* Take full width */
+  width: 100%;
+  max-width: 800px; /* Adjust width if needed */
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -40,8 +47,13 @@ const ContentContainer = styled.div`
   text-align: center;
 `;
 
-const BoldText = styled.span`
-  font-weight: bold;
+const ContentContainer2 = styled.div`
+  width: 100%; /* Adjust the width as needed */
+  background-color: #0a2b61;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: left; /* Left-align text */
+  display: flex;
 `;
 
 const Title = styled.h2`
@@ -87,18 +99,30 @@ const FooterContent = styled.div`
   gap: 2rem;
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1rem;
+const PayPalContainer = styled.div`
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #e7f3fe;
+  border-radius: 8px;
+  border: 1px solid #cfdfe3;
+  text-align: center;
 `;
 
-const SocialIcon = styled.a`
-  color: white;
-  font-size: 1.5rem;
+const PayPalText = styled.p`
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
 `;
 
-const ImageContainer = styled.div`
-  margin: 2rem 0; /* Add margin to separate the image from other content */
+const PayPalLink = styled.a`
+  color: #0070ba;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 3rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default function DonatePage() {
@@ -115,26 +139,54 @@ export default function DonatePage() {
   return (
     <PageContainer>
       <Header>
-        <HeaderText>Contribute to the Campaign</HeaderText>
+        <HeaderText>
+          DONATE<br></br>
+        </HeaderText>
       </Header>
+      <ContentContainer2></ContentContainer2>
       <ContentContainer>
         <Title>Your Support Makes a Difference</Title>
         <Subtitle>
           Join us in making a positive impact in our community by contributing
           to our campaign. Every donation helps us get closer to our goals.
+          Please use either the button below or the PayPal link. Please include
+          your name, address, occupation and current employer.
         </Subtitle>
-        <Link href="#" passHref>
+        <Link
+          href="https://www.efundraisingconnections.com/c/RaymondLiu"
+          passHref
+        >
           <DonateButton>Donate Now</DonateButton>
         </Link>
       </ContentContainer>
+
+      {/* PayPal Section */}
+      <PayPalContainer>
+        <Image
+          src="/paypal.jpg"
+          alt="Campaign Logo"
+          width={146}
+          height={180}
+          priority={false}
+        />
+        <PayPalText></PayPalText>
+        <PayPalLink
+          href="https://paypal.me/ElectRaymondLiu?country.x=US&locale.x=en_US"
+          target="_blank"
+        >
+          Pay via PayPal
+        </PayPalLink>
+        <br />
+      </PayPalContainer>
+
       <Footer>
         <FooterContent>
           <Image
-            src="/newLogo.jpg"
+            src="/logo2.jpg"
             alt="Campaign Logo"
-            width={180}
-            height={40}
-            priority={false} // Lazy loads the image
+            width={450}
+            height={100}
+            priority={false}
           />
         </FooterContent>
       </Footer>
