@@ -154,6 +154,7 @@ const Footer = styled.footer`
 
 const FooterContent = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -246,6 +247,10 @@ export default function DonatePage() {
             priority={false}
           />
         </FooterContent>
+        <p>
+          Paid for by RAYMOND LIU FREMONT CITY COUNCIL DISTRICT 6 CANDIDATE
+          2024, FPPC #: 1475266
+        </p>
       </Footer>
     </PageContainer>
   );

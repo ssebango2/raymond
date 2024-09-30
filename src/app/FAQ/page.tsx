@@ -87,6 +87,7 @@ const Footer = styled.footer`
 
 const FooterContent = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -173,23 +174,10 @@ export default function DonatePage() {
             height={100}
             priority={false} // Lazy loads the image
           />
-          <SocialLinks>
-            <Link href="https://www.facebook.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook-f"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.instagram.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.linkedin.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin-in"></i>
-              </SocialIcon>
-            </Link>
-          </SocialLinks>
+          <p>
+            Paid for by RAYMOND LIU FREMONT CITY COUNCIL DISTRICT 6 CANDIDATE
+            2024, FPPC #: 1475266
+          </p>
         </FooterContent>
       </Footer>
     </PageContainer>
