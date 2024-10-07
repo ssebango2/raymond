@@ -5,6 +5,20 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
+  }
+`;
+
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,13 +49,22 @@ const HeaderText = styled.h1`
 `;
 
 const ContentWrapper = styled.div`
-  display: flex;
+  display: grid;
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 2rem 0;
   align-items: center;
-  justify-content: center; /* Horizontally centers the items if needed */
+  justify-content: center;
+
+  /* Define grid layout for larger screens */
+  grid-template-columns: repeat(2, 1fr); /* 2 items side by side */
+
+  /* Make items stack on top of each other on smaller screens */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    justify-items: center; /* Center items horizontally */
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -54,6 +77,12 @@ const ContentContainer = styled.div`
   display: inline-block; /* Allow it to take up only as much space as needed */
   vertical-align: top; /* Align container to the top */
   max-width: 600px; /* You can adjust this value based on your layout */
+
+  @media (max-width: 768px) {
+    margin: 0 0 2rem 0; /* Remove horizontal margin on smaller screens */
+    width: 100%; /* Full width on smaller screens */
+    max-width: 100%; /* Allow full width on smaller screens */
+  }
 `;
 
 const ContentContainer2 = styled.div`
@@ -175,6 +204,10 @@ const ImageContainer = styled.div`
   width: 100%;
   max-width: 100%;
   margin: 2rem 0; /* Add margin to separate images */
+
+  @media (max-width: 768px) {
+    margin: 1rem 0; /* Reduce vertical margin on smaller screens */
+  }
 `;
 
 export default function DonatePage() {
@@ -206,6 +239,60 @@ export default function DonatePage() {
         Discover the reasons behind the widespread support for Raymond Liu from
         educators, public servants, and your fellow community members.
       </Subtitle1>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/Mercury.jpg"
+            alt="endorsement image"
+            width={400}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;He’s mindful of the importance to maintaining the city’s
+            fiscally cautious perspective, which he appreciates will help hold
+            down debt for future generations.&quot;
+            <br></br>&quot;
+            <br></br>
+            <br></br>
+            <i>
+              —{' '}
+              <StyledLink href="https://www.mercurynews.com/2024/10/05/endorsement-editorial-fremont-council-elect-salwan-keng-zhang-liu/?noamp=mobile/">
+                The Mercury News
+              </StyledLink>{' '}
+            </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/Eastbaytimes.jpg"
+            alt="endorsement image"
+            width={300}
+            height={300}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;Our recommendations are ... Raymond Liu in District 6. He will
+            bring a smart Gen Z perspective to the discussion.&quot;
+            <br></br>
+            <br></br>
+            <i>
+              —{' '}
+              <StyledLink href="https://www.eastbaytimes.com/2024/10/05/endorsement-editorial-fremont-council-elect-salwan-keng-zhang-liu/amp/">
+                East Bay Times
+              </StyledLink>{' '}
+            </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
           <Image
