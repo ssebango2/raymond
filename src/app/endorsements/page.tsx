@@ -5,6 +5,20 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
+  }
+`;
+
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,13 +49,22 @@ const HeaderText = styled.h1`
 `;
 
 const ContentWrapper = styled.div`
-  display: flex;
+  display: grid;
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 2rem 0;
   align-items: center;
-  justify-content: center; /* Horizontally centers the items if needed */
+  justify-content: center;
+
+  /* Define grid layout for larger screens */
+  grid-template-columns: repeat(2, 1fr); /* 2 items side by side */
+
+  /* Make items stack on top of each other on smaller screens */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    justify-items: center; /* Center items horizontally */
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -54,6 +77,12 @@ const ContentContainer = styled.div`
   display: inline-block; /* Allow it to take up only as much space as needed */
   vertical-align: top; /* Align container to the top */
   max-width: 600px; /* You can adjust this value based on your layout */
+
+  @media (max-width: 768px) {
+    margin: 0 0 2rem 0; /* Remove horizontal margin on smaller screens */
+    width: 100%; /* Full width on smaller screens */
+    max-width: 100%; /* Allow full width on smaller screens */
+  }
 `;
 
 const ContentContainer2 = styled.div`
@@ -158,16 +187,6 @@ const FooterContent = styled.div`
   gap: 2rem;
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
-const SocialIcon = styled.a`
-  color: white;
-  font-size: 1.5rem;
-`;
-
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -175,8 +194,38 @@ const ImageContainer = styled.div`
   width: 100%;
   max-width: 100%;
   margin: 2rem 0; /* Add margin to separate images */
+
+  @media (max-width: 768px) {
+    margin: 1rem 0; /* Reduce vertical margin on smaller screens */
+  }
+`;
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+`;
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 `;
 
+const SocialIcon = styled.a`
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #1877f2; /* Facebook blue color on hover */
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+`;
 export default function DonatePage() {
   const [mounted, setMounted] = useState(false);
 
@@ -254,6 +303,88 @@ export default function DonatePage() {
             <br></br>
             <br></br>
             <i>- Yang Shao, Fremont City Councilmember </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/Mercury.jpg"
+            alt="endorsement image"
+            width={400}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;He’s mindful of the importance to maintaining the city’s
+            fiscally cautious perspective, which he appreciates will help hold
+            down debt for future generations.&quot;
+            <br></br>&quot;
+            <br></br>
+            <br></br>
+            <i>
+              —{' '}
+              <StyledLink href="https://www.mercurynews.com/2024/10/05/endorsement-editorial-fremont-council-elect-salwan-keng-zhang-liu/?noamp=mobile/">
+                The Mercury News
+              </StyledLink>{' '}
+            </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/Eastbaytimes.jpg"
+            alt="endorsement image"
+            width={300}
+            height={300}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;Our recommendations are ... Raymond Liu in District 6. He will
+            bring a smart Gen Z perspective to the discussion.&quot;
+            <br></br>
+            <br></br>
+            <i>
+              —{' '}
+              <StyledLink href="https://www.eastbaytimes.com/2024/10/05/endorsement-editorial-fremont-council-elect-salwan-keng-zhang-liu/amp/">
+                East Bay Times
+              </StyledLink>{' '}
+            </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/herbert.jpg"
+            alt="endorsement image"
+            width={300}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;I am proud to endorse Raymond Liu for Fremont City Council.
+            Raymond’s dedication to serving the community is unmatched, and his
+            commitment to transparency and accountability is exactly what our
+            city needs. I’ve seen firsthand his passion for bringing people
+            together and addressing the issues that matter most to our
+            residents. His vision for a safer, more inclusive Fremont is clear,
+            and I believe he has the leadership skills to make it happen. I
+            fully support Raymond Liu and know he will be an excellent
+            representative for our community.&quot;
+            <br></br>
+            <br></br>
+            <i> Dr. Herbert Chiu, Community leader</i>
           </Subtitle>
         </ContentContainer>
         {/* Add more images here if needed */}
@@ -521,13 +652,28 @@ export default function DonatePage() {
       </ContentWrapper>
       <Footer>
         <FooterContent>
-          <Image
-            src="/logo2.jpg"
-            alt="Campaign Logo"
-            width={450}
-            height={100}
-            priority={false} // Lazy loads the image
-          />
+          <LogoContainer>
+            <Image
+              src="/logo2.jpg"
+              alt="Campaign Logo"
+              width={450}
+              height={100}
+              priority={false}
+            />
+            <SocialIcon
+              href="https://www.facebook.com/profile.php?id=61567076660493&mibextid=LQQJ4d"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </SocialIcon>
+          </LogoContainer>
           <p>
             Paid for by RAYMOND LIU FREMONT CITY COUNCIL DISTRICT 6 CANDIDATE
             2024, FPPC #: 1475266
