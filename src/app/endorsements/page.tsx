@@ -187,16 +187,6 @@ const FooterContent = styled.div`
   gap: 2rem;
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
-const SocialIcon = styled.a`
-  color: white;
-  font-size: 1.5rem;
-`;
-
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -209,7 +199,33 @@ const ImageContainer = styled.div`
     margin: 1rem 0; /* Reduce vertical margin on smaller screens */
   }
 `;
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+`;
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+`;
 
+const SocialIcon = styled.a`
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #1877f2; /* Facebook blue color on hover */
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+`;
 export default function DonatePage() {
   const [mounted, setMounted] = useState(false);
 
@@ -239,6 +255,58 @@ export default function DonatePage() {
         Discover the reasons behind the widespread support for Raymond Liu from
         educators, public servants, and your fellow community members.
       </Subtitle1>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/mei.jpg"
+            alt="endorsement image"
+            width={364}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;As Mayor of Fremont, I’m proud to endorse Raymond Liu for
+            Fremont City Council, District 6. Raymond’s commitment to
+            transparency, accountability, and addressing key issues like
+            homelessness and public safety makes him the right choice for our
+            community. Raymond will serve Fremont with integrity and
+            dedication.&quot;
+            <br></br>
+            <br></br>
+            <i>— Lily Mei, Mayor of Fremont </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/yang.jpg"
+            alt="endorsement image"
+            width={400}
+            height={600}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;As a current Fremont City Councilmember, I am proud to endorse
+            Raymond Liu for Fremont City Council, District 6. Raymond brings
+            fresh ideas and a strong commitment to transparency and
+            accountability. His passion for addressing the issues that matter
+            most to our community, including homelessness, education, and public
+            safety, is evident in everything he does. I believe Raymond is the
+            right choice to represent District 6 and to help build a better
+            future for Fremont.&quot;
+            <br></br>
+            <br></br>
+            <i>- Yang Shao, Fremont City Councilmember </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
           <Image
@@ -296,51 +364,27 @@ export default function DonatePage() {
       <ContentWrapper>
         <ImageContainer>
           <Image
-            src="/mei.jpg"
+            src="/herbert.jpg"
             alt="endorsement image"
-            width={364}
+            width={300}
             height={400}
             priority={false} // Lazy loads the image
           />
         </ImageContainer>
         <ContentContainer>
           <Subtitle>
-            &quot;As Mayor of Fremont, I’m proud to endorse Raymond Liu for
-            Fremont City Council, District 6. Raymond’s commitment to
-            transparency, accountability, and addressing key issues like
-            homelessness and public safety makes him the right choice for our
-            community. Raymond will serve Fremont with integrity and
-            dedication.&quot;
+            &quot;I am proud to endorse Raymond Liu for Fremont City Council.
+            Raymond’s dedication to serving the community is unmatched, and his
+            commitment to transparency and accountability is exactly what our
+            city needs. I’ve seen firsthand his passion for bringing people
+            together and addressing the issues that matter most to our
+            residents. His vision for a safer, more inclusive Fremont is clear,
+            and I believe he has the leadership skills to make it happen. I
+            fully support Raymond Liu and know he will be an excellent
+            representative for our community.&quot;
             <br></br>
             <br></br>
-            <i>— Lily Mei, Mayor of Fremont </i>
-          </Subtitle>
-        </ContentContainer>
-        {/* Add more images here if needed */}
-      </ContentWrapper>
-      <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/yang.jpg"
-            alt="endorsement image"
-            width={400}
-            height={600}
-            priority={false} // Lazy loads the image
-          />
-        </ImageContainer>
-        <ContentContainer>
-          <Subtitle>
-            &quot;As a current Fremont City Councilmember, I am proud to endorse
-            Raymond Liu for Fremont City Council, District 6. Raymond brings
-            fresh ideas and a strong commitment to transparency and
-            accountability. His passion for addressing the issues that matter
-            most to our community, including homelessness, education, and public
-            safety, is evident in everything he does. I believe Raymond is the
-            right choice to represent District 6 and to help build a better
-            future for Fremont.&quot;
-            <br></br>
-            <br></br>
-            <i>- Yang Shao, Fremont City Councilmember </i>
+            <i> Dr. Herbert Chiu, Community leader</i>
           </Subtitle>
         </ContentContainer>
         {/* Add more images here if needed */}
@@ -608,13 +652,28 @@ export default function DonatePage() {
       </ContentWrapper>
       <Footer>
         <FooterContent>
-          <Image
-            src="/logo2.jpg"
-            alt="Campaign Logo"
-            width={450}
-            height={100}
-            priority={false} // Lazy loads the image
-          />
+          <LogoContainer>
+            <Image
+              src="/logo2.jpg"
+              alt="Campaign Logo"
+              width={450}
+              height={100}
+              priority={false}
+            />
+            <SocialIcon
+              href="https://www.facebook.com/profile.php?id=61567076660493&mibextid=LQQJ4d"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </SocialIcon>
+          </LogoContainer>
           <p>
             Paid for by RAYMOND LIU FREMONT CITY COUNCIL DISTRICT 6 CANDIDATE
             2024, FPPC #: 1475266
