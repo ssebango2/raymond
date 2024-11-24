@@ -623,33 +623,7 @@ export default function DonatePage() {
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>
-      <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/morales.jpg"
-            alt="endorsement image"
-            width={400}
-            height={300}
-            priority={false} // Lazy loads the image
-          />
-        </ImageContainer>
-        {/* Add more images here if needed */}
-        <ContentContainer>
-          <Subtitle>
-            &quot;As a preschool teacher, I know the importance of creating a
-            safe, supportive environment where everyone has a chance to thrive.
-            Ray understands this at a community level. His commitment to
-            addressing corruption and advocating for families in Fremont shows
-            his dedication to creating a better future for our children. I
-            proudly endorse Raymond Liu for Fremont City Council, knowing he
-            will be a strong advocate for education, families, and
-            transparency.&quot;
-            <br />
-            <br />
-            <i>- Alexandro Morales, preschool teacher</i>
-          </Subtitle>
-        </ContentContainer>
-      </ContentWrapper>
+      
       <Footer>
         <FooterContent>
           <LogoContainer>
