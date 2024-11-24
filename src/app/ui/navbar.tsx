@@ -22,7 +22,7 @@ const HamburgerIcon = styled.div`
     border-radius: 5px;
   }
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1300px) {
     display: flex;
   }
 `;
@@ -46,7 +46,7 @@ const NavLinks = styled.ul<NavLinksProps>`
   display: flex;
   list-style: none;
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1300px) {
     flex-direction: column;
     position: absolute;
     top: 70px;
@@ -64,7 +64,7 @@ const NavItem = styled.li`
   margin: 0 1rem;
   position: relative;
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1300px) {
     margin: 1rem 0;
     text-align: center;
   }
@@ -92,7 +92,7 @@ const MoreContainer = styled.div`
   font-size: 1.2rem;
   font-family: 'Lusitana', serif;
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1300px) {
     justify-content: center;
     width: 100%; /* Ensures it takes full width on mobile */
   }
@@ -112,7 +112,7 @@ const DropdownMenu = styled.ul`
   padding: 1rem;
   z-index: 1000;
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1300px) {
     position: static;
     box-shadow: none;
     padding: 0.5rem 0;
@@ -178,11 +178,12 @@ const Navbar = () => {
         <NavItem onClick={handleLinkClick}>
           <Link href="/contact">CONTACT</Link>
         </NavItem>
-        {/*}
         <NavItem onClick={handleLinkClick}>
           <Link href="/donate">DONATE</Link>
-        </NavItem> 
-  */}
+        </NavItem>
+        <NavItem onClick={handleLinkClick}>
+          <Link href="/events">EVENTS</Link>
+        </NavItem>
         <NavItem onClick={() => setDropdownOpen(!dropdownOpen)}>
           <MoreContainer>MORE </MoreContainer>
           {dropdownOpen && (

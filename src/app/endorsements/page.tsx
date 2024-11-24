@@ -5,6 +5,20 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
+  }
+`;
+
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,24 +50,39 @@ const HeaderText = styled.h1`
 
 const ContentWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 2rem 0;
+  align-items: center;
+  justify-content: center;
+
+  /* Define grid layout for larger screens */
+  grid-template-columns: repeat(2, 1fr); /* 2 items side by side */
+
+  /* Make items stack on top of each other on smaller screens */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    justify-items: center; /* Center items horizontally */
+  }
 `;
 
 const ContentContainer = styled.div`
-  width: 100%; /* Adjust the width as needed */
+  width: auto; /* Adjust width to be flexible */
   background-color: #f9f9f9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  text-align: left; /* Left-align text */
-  margin-right: 2rem; /* Add space between content and image */
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  text-align: left;
+  margin: 0 2rem 2rem 0; /* Add margin for spacing between items */
+  display: inline-block; /* Allow it to take up only as much space as needed */
+  vertical-align: top; /* Align container to the top */
+  max-width: 600px; /* You can adjust this value based on your layout */
+
+  @media (max-width: 768px) {
+    margin: 0 0 2rem 0; /* Remove horizontal margin on smaller screens */
+    width: 100%; /* Full width on smaller screens */
+    max-width: 100%; /* Allow full width on smaller screens */
+  }
 `;
 
 const ContentContainer2 = styled.div`
@@ -152,19 +181,10 @@ const Footer = styled.footer`
 
 const FooterContent = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-`;
-
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
-const SocialIcon = styled.a`
-  color: white;
-  font-size: 1.5rem;
 `;
 
 const ImageContainer = styled.div`
@@ -174,8 +194,38 @@ const ImageContainer = styled.div`
   width: 100%;
   max-width: 100%;
   margin: 2rem 0; /* Add margin to separate images */
+
+  @media (max-width: 768px) {
+    margin: 1rem 0; /* Reduce vertical margin on smaller screens */
+  }
+`;
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+`;
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 `;
 
+const SocialIcon = styled.a`
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #1877f2; /* Facebook blue color on hover */
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+`;
 export default function DonatePage() {
   const [mounted, setMounted] = useState(false);
 
@@ -197,14 +247,148 @@ export default function DonatePage() {
       <ContentContainer2></ContentContainer2>
       <Subtitle1>
         <BoldText>
-          Why Do Teachers, Police Officers, and District 6 Residents Endorse
+          Why Do Teachers, Elected Officials, and District 6 Residents Endorse
           Raymond Liu?
         </BoldText>
         <br></br>
         <br></br>
         Discover the reasons behind the widespread support for Raymond Liu from
-        educators, law enforcement, and your fellow community members.
+        educators, public servants, and your fellow community members.
       </Subtitle1>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/mei.jpg"
+            alt="endorsement image"
+            width={364}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;As Mayor of Fremont, I’m proud to endorse Raymond Liu for
+            Fremont City Council, District 6. Raymond’s commitment to
+            transparency, accountability, and addressing key issues like
+            homelessness and public safety makes him the right choice for our
+            community. Raymond will serve Fremont with integrity and
+            dedication.&quot;
+            <br></br>
+            <br></br>
+            <i>— Lily Mei, Mayor of Fremont </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/yang.jpg"
+            alt="endorsement image"
+            width={400}
+            height={600}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;As a current Fremont City Councilmember, I am proud to endorse
+            Raymond Liu for Fremont City Council, District 6. Raymond brings
+            fresh ideas and a strong commitment to transparency and
+            accountability. His passion for addressing the issues that matter
+            most to our community, including homelessness, education, and public
+            safety, is evident in everything he does. I believe Raymond is the
+            right choice to represent District 6 and to help build a better
+            future for Fremont.&quot;
+            <br></br>
+            <br></br>
+            <i>- Yang Shao, Fremont City Councilmember </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/Mercury.jpg"
+            alt="endorsement image"
+            width={400}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;He’s mindful of the importance to maintaining the city’s
+            fiscally cautious perspective, which he appreciates will help hold
+            down debt for future generations.&quot;
+            <br></br>&quot;
+            <br></br>
+            <br></br>
+            <i>
+              —{' '}
+              <StyledLink href="https://www.mercurynews.com/2024/10/05/endorsement-editorial-fremont-council-elect-salwan-keng-zhang-liu/?noamp=mobile/">
+                The Mercury News
+              </StyledLink>{' '}
+            </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/Eastbaytimes.jpg"
+            alt="endorsement image"
+            width={300}
+            height={300}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;Our recommendations are ... Raymond Liu in District 6. He will
+            bring a smart Gen Z perspective to the discussion.&quot;
+            <br></br>
+            <br></br>
+            <i>
+              —{' '}
+              <StyledLink href="https://www.eastbaytimes.com/2024/10/05/endorsement-editorial-fremont-council-elect-salwan-keng-zhang-liu/amp/">
+                East Bay Times
+              </StyledLink>{' '}
+            </i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
+      <ContentWrapper>
+        <ImageContainer>
+          <Image
+            src="/herbert.jpg"
+            alt="endorsement image"
+            width={300}
+            height={400}
+            priority={false} // Lazy loads the image
+          />
+        </ImageContainer>
+        <ContentContainer>
+          <Subtitle>
+            &quot;I am proud to endorse Raymond Liu for Fremont City Council.
+            Raymond’s dedication to serving the community is unmatched, and his
+            commitment to transparency and accountability is exactly what our
+            city needs. I’ve seen firsthand his passion for bringing people
+            together and addressing the issues that matter most to our
+            residents. His vision for a safer, more inclusive Fremont is clear,
+            and I believe he has the leadership skills to make it happen. I
+            fully support Raymond Liu and know he will be an excellent
+            representative for our community.&quot;
+            <br></br>
+            <br></br>
+            <i> Dr. Herbert Chiu, Community leader</i>
+          </Subtitle>
+        </ContentContainer>
+        {/* Add more images here if needed */}
+      </ContentWrapper>
       <ContentWrapper>
         <ImageContainer>
           <Image
@@ -439,59 +623,35 @@ export default function DonatePage() {
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>
-      <ContentWrapper>
-        <ImageContainer>
-          <Image
-            src="/morales.jpg"
-            alt="endorsement image"
-            width={400}
-            height={300}
-            priority={false} // Lazy loads the image
-          />
-        </ImageContainer>
-        {/* Add more images here if needed */}
-        <ContentContainer>
-          <Subtitle>
-            &quot;As a preschool teacher, I know the importance of creating a
-            safe, supportive environment where everyone has a chance to thrive.
-            Ray understands this at a community level. His commitment to
-            addressing corruption and advocating for families in Fremont shows
-            his dedication to creating a better future for our children. I
-            proudly endorse Raymond Liu for Fremont City Council, knowing he
-            will be a strong advocate for education, families, and
-            transparency.&quot;
-            <br />
-            <br />
-            <i>- Alexandro Morales, preschool teacher</i>
-          </Subtitle>
-        </ContentContainer>
-      </ContentWrapper>
+      
       <Footer>
         <FooterContent>
-          <Image
-            src="/newLogo.jpg"
-            alt="Campaign Logo"
-            width={180}
-            height={40}
-            priority={false} // Lazy loads the image
-          />
-          <SocialLinks>
-            <Link href="https://www.facebook.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook-f"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.instagram.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
-              </SocialIcon>
-            </Link>
-            <Link href="https://www.linkedin.com" passHref>
-              <SocialIcon target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin-in"></i>
-              </SocialIcon>
-            </Link>
-          </SocialLinks>
+          <LogoContainer>
+            <Image
+              src="/logo2.jpg"
+              alt="Campaign Logo"
+              width={450}
+              height={100}
+              priority={false}
+            />
+            <SocialIcon
+              href="https://www.facebook.com/profile.php?id=61567076660493&mibextid=LQQJ4d"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </SocialIcon>
+          </LogoContainer>
+          <p>
+            Paid for by RAYMOND LIU FREMONT CITY COUNCIL DISTRICT 6 CANDIDATE
+            2024, FPPC #: 1475266
+          </p>
         </FooterContent>
       </Footer>
     </PageContainer>
