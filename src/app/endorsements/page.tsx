@@ -623,7 +623,6 @@ export default function DonatePage() {
           </Subtitle>
         </ContentContainer>
       </ContentWrapper>
-      
       <Footer>
         <FooterContent>
           <LogoContainer>

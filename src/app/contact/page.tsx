@@ -156,6 +156,20 @@ const SocialIcon = styled.a`
   }
 `;
 
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
+  }
+`;
+
 /* const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
