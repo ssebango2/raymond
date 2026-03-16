@@ -182,6 +182,47 @@ const ImageContainer = styled.div`
     margin: 1rem 0; /* Reduce vertical margin on smaller screens */
   }
 `;
+
+const Footer = styled.footer`
+  width: 100%;
+  background-color: #0a2b61;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+`;
+
+const FooterContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+`;
+
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+`;
+
+const SocialIcon = styled.a`
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #1877f2;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
 export default function DonatePage() {
   const [mounted, setMounted] = useState(false);
 

@@ -58,7 +58,6 @@ const ContentContainer = styled.div`
   }
 `;
 
-
 const ContentContainer2 = styled.div`
   width: 100%; /* Adjust the width as needed */
   background-color: #0a2b61;
