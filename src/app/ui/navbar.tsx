@@ -84,65 +84,11 @@ const NavItem = styled.li`
   }
 `;
 
-const MoreContainer = styled.div`
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  color: #000000;
-  font-size: 1.2rem;
-  font-family: 'Lusitana', serif;
-
-  @media (max-width: 1300px) {
-    justify-content: center;
-    width: 100%; /* Ensures it takes full width on mobile */
-  }
-
-  svg {
-    margin-left: 0.5rem; /* Add some space between text and arrow */
-  }
-`;
-
-const DropdownMenu = styled.ul`
-  position: absolute;
-  top: 2rem;
-  right: 0;
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 1rem;
-  z-index: 1000;
-
-  @media (max-width: 1300px) {
-    position: static;
-    box-shadow: none;
-    padding: 0.5rem 0;
-  }
-`;
-
-const DropdownItem = styled.li`
-  margin-bottom: 0.5rem;
-
-  a {
-    text-decoration: none;
-    color: #000000;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
-    setDropdownOpen(false);
   };
 
   return (
@@ -171,31 +117,6 @@ const Navbar = () => {
         </NavItem>
         <NavItem onClick={handleLinkClick}>
           <Link href="/endorsements">ENDORSEMENTS</Link>
-        </NavItem>
-        <NavItem onClick={handleLinkClick}>
-          <Link href="/FAQ">FAQ</Link>
-        </NavItem>
-        <NavItem onClick={handleLinkClick}>
-          <Link href="/contact">CONTACT</Link>
-        </NavItem>
-        <NavItem onClick={handleLinkClick}>
-          <Link href="/donate">DONATE</Link>
-        </NavItem>
-        <NavItem onClick={handleLinkClick}>
-          <Link href="/events">EVENTS</Link>
-        </NavItem>
-        <NavItem onClick={() => setDropdownOpen(!dropdownOpen)}>
-          <MoreContainer>MORE </MoreContainer>
-          {dropdownOpen && (
-            <DropdownMenu>
-              <DropdownItem onClick={handleLinkClick}>
-                <Link href="/more1">WHERE IS DISTRICT 6?</Link>
-              </DropdownItem>
-              <DropdownItem onClick={handleLinkClick}>
-                <Link href="/more2">REGISTER TO VOTE</Link>
-              </DropdownItem>
-            </DropdownMenu>
-          )}
         </NavItem>
       </NavLinks>
     </NavContainer>

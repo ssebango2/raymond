@@ -1,243 +1,417 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
+import styled from 'styled-components';
+import {
+  BuildingOffice2Icon,
+  BriefcaseIcon,
+  ShieldCheckIcon,
+  ArrowTrendingUpIcon,
+} from '@heroicons/react/24/outline';
 
-const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f9f9f9;
-  padding: 0; /* Remove padding */
-`;
-
-const Header = styled.header`
+const Page = styled.main`
   width: 100%;
-  background-color: #0a2b61;
-  padding: 2rem 0;
-  text-align: center;
-  color: white;
-  margin: 0; /* Ensure no extra margin */
+  min-height: calc(100vh - 70px);
+  background: #f3f6fb;
 `;
 
-const HeaderText = styled.h1`
-  font-size: 2.5rem;
-  margin: 0; /* Ensure no extra margin */
-`;
-
-const ContentContainer = styled.div`
-  width: 100%; /* Take full width */
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0 0 0;
-  padding: 2rem;
-  text-align: center;
-`;
-
-const BoldText = styled.span`
-  font-weight: bold;
-`;
-
-const Title = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #003f91;
-`;
-
-const Subtitle = styled.p`
-  font-size: 1.2rem;
-  color: #48494b;
-  margin-bottom: 2rem;
-`;
-
-const Subtitle1 = styled.p`
-  font-size: 1.2rem;
-  color: #000328;
-  margin-bottom: 2rem;
-  text-align: left;
-`;
-
-const Footer = styled.footer`
+const Section = styled.section`
   width: 100%;
-  background-color: #0a2b61;
-  padding: 2rem 0;
-  text-align: center;
-  color: white;
-  margin-top: 0rem;
 `;
 
-const FooterContent = styled.div`
+const Container = styled.div`
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+`;
+
+const Hero = styled(Section)`
+  background: #0a2b61;
+  padding: 0;
+`;
+
+const HeroInner = styled.div`
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+`;
+
+const HeroBanner = styled.div`
+  width: 100%;
+  background: #0a2b61;
+`;
+
+const HeroBannerImage = styled(Image)`
+  width: 100%;
+  height: auto;
+  display: block;
+`;
+
+const HeroActions = styled.div`
+  background: #0a2b61;
+  padding: 0.9rem 1.25rem 1.25rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
 `;
 
-const ImageContainer = styled.div`
-  margin: 2rem; /* Add margin to separate the image from other content */
-  width: 100%; /* Make container full width */
-  max-width: 100%; /* Limit the container's width to 100% */
+const Actions = styled.div`
   display: flex;
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+  }
 `;
 
-const StyledImage = styled.img`
-  width: 50%; /* Image takes up 100% of the container width */
-  height: auto; /* Maintain aspect ratio */
-`;
-
-const StyledLink = styled.a`
+const Button = styled(Link)<{
+  $variant?: 'donate' | 'volunteer' | 'neutral' | 'blue';
+}>`
   display: inline-flex;
   align-items: center;
-  text-decoration: none;
-  color: #007bff; /* Default link color */
-  font-weight: bold;
-  position: relative;
-
-  &:hover {
-    color: #0056b3; /* Hover color */
-    text-decoration: underline;
-  }
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 1rem;
-  width: 100%;
-`;
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-`;
+  height: 44px;
+  padding: 0 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background-color 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease;
 
-const SocialIcon = styled.a`
-  color: white;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  ${({ $variant }) => {
+    switch ($variant) {
+      case 'volunteer':
+        return `
+          background: #c62828;
+          color: #fff;
+          box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+          border: 1px solid rgba(255,255,255,0.14);
+        `;
+      case 'neutral':
+        return `
+          background: #e6e9ef;
+          color: #0a2b61;
+          border: 1px solid rgba(10,43,97,0.18);
+          box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+        `;
+      case 'blue':
+        return `
+          background: #1f3f9a;
+          color: #fff;
+          box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+          border: 1px solid rgba(255,255,255,0.12);
+        `;
+      case 'donate':
+      default:
+        return `
+          background: #f4c542;
+          color: #0a2b61;
+          box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+          border: 1px solid rgba(0,0,0,0.08);
+        `;
+    }
+  }}
 
   &:hover {
-    color: #1877f2; /* Facebook blue color on hover */
+    transform: translateY(-1px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26);
   }
+
+  &:active {
+    transform: translateY(0);
+  }
+`;
+
+const Split = styled(Section)`
+  padding: 2rem 0;
+  background: #f3f6fb;
+`;
+
+const SplitGrid = styled(Container)`
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const Photo = styled(Image)`
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(10, 43, 97, 0.18);
+  border: 1px solid rgba(10, 43, 97, 0.1);
+`;
+
+const Card = styled.div`
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(10, 43, 97, 0.12);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+  padding: 1.6rem;
+`;
+
+const H2 = styled.h2`
+  font-size: 1.85rem;
+  line-height: 1.12;
+  margin-bottom: 0.75rem;
+  color: #0a2b61;
+`;
+
+const P = styled.p`
+  color: #2f3640;
+  line-height: 1.55;
+`;
+
+const Results = styled(Section)`
+  background: #153a86;
+  padding: 0;
+`;
+
+const ResultsInner = styled(Container)`
+  padding: 0;
+  max-width: 1024px;
+`;
+
+const ResultsImage = styled(Image)`
+  width: 100%;
+  height: auto;
+  display: block;
+`;
+
+const ResultsActions = styled(Container)`
+  padding-top: 0.85rem;
+  padding-bottom: 1.35rem;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+  }
+`;
+
+const Priorities = styled(Section)`
+  padding: 2.25rem 0 2.6rem;
+  background: #f3f6fb;
+`;
+
+const PrioritiesHeader = styled(Container)`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+`;
+
+const PrioritiesTitle = styled.h3`
+  font-size: 2rem;
+  color: #0a2b61;
+`;
+
+const Grid = styled(Container)`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const PriorityCard = styled.div`
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(10, 43, 97, 0.12);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
+  padding: 1.15rem 1.15rem 1.25rem;
+  min-height: 170px;
+  display: grid;
+  gap: 0.6rem;
+`;
+
+const PriorityIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(10, 43, 97, 0.08);
+  display: grid;
+  place-items: center;
+  color: #0a2b61;
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 `;
 
-export default function DonatePage() {
-  const [mounted, setMounted] = useState(false);
+const PriorityTitle = styled.div`
+  font-weight: 900;
+  color: #0a2b61;
+`;
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+const PriorityText = styled.div`
+  color: #2f3640;
+  line-height: 1.45;
+  font-size: 0.95rem;
+`;
 
-  if (!mounted) {
-    return null;
+const Join = styled(Section)`
+  background: linear-gradient(180deg, #0a2b61 0%, #06224e 100%);
+  color: #fff;
+  padding: 2.25rem 0;
+`;
+
+const JoinGrid = styled(Container)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+`;
+
+const JoinTitle = styled.h3`
+  font-size: 2rem;
+`;
+
+const AmountRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+`;
+
+const AmountButton = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  min-width: 74px;
+  padding: 0 0.9rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #0a2b61;
+  background: #fff;
+  font-weight: 900;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
   }
+`;
 
+export default function HomePage() {
   return (
-    <PageContainer>
-      <Header></Header>
-      <ImageContainer>
-        <StyledImage
-          src="/cover-photo.jpg"
-          alt="About Raymond"
-          width={975}
-          height={650}
-        />
-      </ImageContainer>
-      <ContentContainer>
-        <Subtitle>
-          <BoldText>
-            As a proud longtime resident and product of Fremont&apos;s public
-            school system, I, Raymond Liu, <br></br>am running for Fremont City
-            Council to restore integrity and accountability to our local
-            government.
-          </BoldText>
-        </Subtitle>
-        <Subtitle1>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our city deserves
-          leaders who prioritize the well-being of the community over personal
-          gain. Unfortunately, that hasn&apos;t been the case in Fremont. The
-          recent&nbsp;
-          <StyledLink href="https://www.mercurynews.com/2022/03/30/former-fremont-city-manager-mark-danaj-charged-with-embezzlement/">
-            felony conviction of our former City Manager
-          </StyledLink>
-          &nbsp;for fraud is a glaring example of corruption that has shaken our
-          community&apos;s trust in local government. Even more shocking is
-          that, despite his past misconduct, the current City Council approved
-          more than $300,000 as a severance package for him—a decision that
-          raises serious questions about their commitment to accountability and
-          transparency. Furthermore, it&apos;s increasingly unlikely that
-          Fremont will ever obtain our missing funds back, as according to
-          Danaj&apos;s lawyer,&nbsp;
-          <StyledLink href="https://www.siliconvalley.com/2024/07/18/disgraced-former-fremont-city-manager-kicked-out-of-government-association/">
-            it is unlikely he&apos;ll pay this back as he is an
-            &quot;indigent&quot; college student.{' '}
-          </StyledLink>
-          <br></br>
-          <br></br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additionally, the
-          rising crime rate is a sharp indictment on the current council&apos;s
-          failed policies. Since 2019,{' '}
-          <StyledLink href="https://www.fremontpolice.gov/home/showpublisheddocument/646/637817280148230000/">
-            the crime rate has risen sharply
-          </StyledLink>{' '}
-          and the current council&apos;s inability to address these critical
-          issues has left our community vulnerable and struggling. Fremont
-          deserves better.
-          <br></br>
-          <br></br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&apos;m running for
-          Fremont City Council because I believe our city needs a fresh start.
-          It&apos;s time for leadership that values integrity and puts the
-          interests of residents first. My campaign is focused on restoring
-          trust in our local government by holding those in power accountable
-          and ensuring that public funds are used responsibly. Fremont deserves
-          better, and together, we can build a more honest, transparent, and
-          vibrant future for our city.
-        </Subtitle1>
-      </ContentContainer>
-      <Footer>
-        <FooterContent>
-          <LogoContainer>
-            <Image
-              src="/logo2.jpg"
-              alt="Campaign Logo"
-              width={450}
-              height={100}
-              priority={false}
+    <Page>
+      <Hero>
+        <HeroInner>
+          <HeroBanner>
+            <HeroBannerImage
+              src="/home-hero-hd.jpg"
+              alt="Raymond Liu — CA State Senate District 10"
+              width={2048}
+              height={1092}
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
             />
-            <SocialIcon
-              href="https://www.facebook.com/profile.php?id=61567076660493&mibextid=LQQJ4d"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </SocialIcon>
-          </LogoContainer>
-          <p>
-            Paid for by RAYMOND LIU FREMONT CITY COUNCIL DISTRICT 6 CANDIDATE
-            2024, FPPC #: 1475266
-          </p>
-        </FooterContent>
-      </Footer>
-    </PageContainer>
+          </HeroBanner>
+        </HeroInner>
+      </Hero>
+
+      <Split>
+        <SplitGrid>
+          <Photo
+            src="/home-small-logo.jpg"
+            alt="Raymond Liu"
+            width={975}
+            height={650}
+            sizes="(max-width: 960px) 100vw, 50vw"
+          />
+          <Card>
+            <H2>A New Generation of Leadership</H2>
+            <P>
+              Raymond Liu is running to bring practical leadership, integrity,
+              and real solutions to our community. As a lifelong resident, he
+              understands the challenges families face—rising costs,
+              opportunity, and the need for responsible leadership.
+            </P>
+          </Card>
+        </SplitGrid>
+      </Split>
+
+      <Results>
+        <ResultsInner>
+          <ResultsImage
+            src="/home-results.jpg"
+            alt="Delivering results for Fremont"
+            width={2048}
+            height={1116}
+            sizes="(max-width: 1024px) 100vw, 1024px"
+          />
+        </ResultsInner>
+      </Results>
+
+      <Priorities>
+        <PrioritiesHeader>
+          <PrioritiesTitle>Priorities for District 10</PrioritiesTitle>
+        </PrioritiesHeader>
+        <Grid>
+          <PriorityCard>
+            <PriorityIcon aria-hidden>
+              <BuildingOffice2Icon />
+            </PriorityIcon>
+            <PriorityTitle>Affordable Housing</PriorityTitle>
+            <PriorityText>
+              Build more homes and stop speculation that drives up prices.
+            </PriorityText>
+          </PriorityCard>
+          <PriorityCard>
+            <PriorityIcon aria-hidden>
+              <BriefcaseIcon />
+            </PriorityIcon>
+            <PriorityTitle>Small Businesses</PriorityTitle>
+            <PriorityText>
+              Cut red tape and support local entrepreneurs to grow.
+            </PriorityText>
+          </PriorityCard>
+          <PriorityCard>
+            <PriorityIcon aria-hidden>
+              <ShieldCheckIcon />
+            </PriorityIcon>
+            <PriorityTitle>Public Safety</PriorityTitle>
+            <PriorityText>
+              Keep neighborhoods safe with smart, accountable solutions.
+            </PriorityText>
+          </PriorityCard>
+          <PriorityCard>
+            <PriorityIcon aria-hidden>
+              <ArrowTrendingUpIcon />
+            </PriorityIcon>
+            <PriorityTitle>Economic Opportunity</PriorityTitle>
+            <PriorityText>
+              Create pathways to good jobs and a stronger local economy.
+            </PriorityText>
+          </PriorityCard>
+        </Grid>
+      </Priorities>
+    </Page>
   );
 }
