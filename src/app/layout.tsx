@@ -1,12 +1,14 @@
 // src/layout.tsx
 
-import { Lusitana } from '@next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from './ui/navbar';
+import Footer from './ui/footer';
 
-const lusitana = Lusitana({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '700'], // Specify the weights you need
+  display: 'swap',
+  variable: '--font-sans',
 });
 
 export default function RootLayout({
@@ -16,12 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-      </head>
-      <body className={lusitana.className}>
+      <body className={inter.variable}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
