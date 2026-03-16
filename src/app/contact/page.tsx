@@ -3,20 +3,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-const StyledLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #007bff; /* Default link color */
-  font-weight: bold;
-  position: relative;
-
-  &:hover {
-    color: #0056b3; /* Hover color */
-    text-decoration: underline;
-  }
-`;
-
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -123,6 +109,20 @@ const Button = styled.button`
 
   &:hover {
     background-color: #002f72;
+  }
+`;
+
+const StyledLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff; /* Default link color */
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    color: #0056b3; /* Hover color */
+    text-decoration: underline;
   }
 `;
 
