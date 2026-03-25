@@ -4,30 +4,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
 import {
-  BuildingOffice2Icon,
+  BuildingLibraryIcon,
   BriefcaseIcon,
   ShieldCheckIcon,
-  ArrowTrendingUpIcon,
-} from '@heroicons/react/24/outline';
+  ChartBarIcon,
+} from '@heroicons/react/24/solid';
 
 const Page = styled.main`
   width: 100%;
   min-height: calc(100vh - 70px);
-  background: #f3f6fb;
+  background: #0a2b61;
 `;
 
-const Section = styled.section`
+/* ─── Hero ─────────────────────────────────────────── */
+
+const Hero = styled.section`
   width: 100%;
-`;
-
-const Container = styled.div`
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-`;
-
-const Hero = styled(Section)`
   background: #0a2b61;
   padding: 0;
 `;
@@ -38,11 +30,6 @@ const HeroInner = styled.div`
   margin: 0 auto;
 `;
 
-const HeroBanner = styled.div`
-  width: 100%;
-  background: #0a2b61;
-`;
-
 const HeroBannerImage = styled(Image)`
   width: 100%;
   height: auto;
@@ -50,8 +37,8 @@ const HeroBannerImage = styled(Image)`
 `;
 
 const HeroActions = styled.div`
-  background: #0a2b61;
-  padding: 0.9rem 1.25rem 1.25rem;
+  background: linear-gradient(180deg, #0a2b61 0%, #061e47 100%);
+  padding: 1rem 1.25rem 1.5rem;
   display: flex;
   justify-content: center;
 `;
@@ -60,20 +47,15 @@ const Actions = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-
-  @media (max-width: 960px) {
-    justify-content: center;
-  }
+  justify-content: center;
 `;
 
-const Button = styled(Link)<{
-  $variant?: 'donate' | 'volunteer' | 'neutral' | 'blue';
-}>`
+const Button = styled(Link)<{ $variant?: 'volunteer' | 'ghost' }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 44px;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 800;
@@ -82,44 +64,22 @@ const Button = styled(Link)<{
   font-size: 0.85rem;
   transition:
     transform 140ms ease,
-    box-shadow 140ms ease,
-    background-color 140ms ease,
-    color 140ms ease,
-    border-color 140ms ease;
+    box-shadow 140ms ease;
 
-  ${({ $variant }) => {
-    switch ($variant) {
-      case 'volunteer':
-        return `
-          background: #c62828;
-          color: #fff;
-          box-shadow: 0 10px 24px rgba(0,0,0,0.22);
-          border: 1px solid rgba(255,255,255,0.14);
-        `;
-      case 'neutral':
-        return `
-          background: #e6e9ef;
-          color: #0a2b61;
-          border: 1px solid rgba(10,43,97,0.18);
-          box-shadow: 0 10px 24px rgba(0,0,0,0.14);
-        `;
-      case 'blue':
-        return `
-          background: #1f3f9a;
-          color: #fff;
-          box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-          border: 1px solid rgba(255,255,255,0.12);
-        `;
-      case 'donate':
-      default:
-        return `
-          background: #f4c542;
-          color: #0a2b61;
-          box-shadow: 0 10px 26px rgba(0,0,0,0.22);
-          border: 1px solid rgba(0,0,0,0.08);
-        `;
-    }
-  }}
+  ${({ $variant }) =>
+    $variant === 'ghost'
+      ? `
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.22);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+  `
+      : `
+    background: #c62828;
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    border: 1px solid rgba(255,255,255,0.14);
+  `}
 
   &:hover {
     transform: translateY(-1px);
@@ -131,93 +91,51 @@ const Button = styled(Link)<{
   }
 `;
 
-const Split = styled(Section)`
-  padding: 2rem 0;
+/* ─── Priorities ────────────────────────────────────── */
+
+const Priorities = styled.section`
+  width: 100%;
+  padding: 2.75rem 0 2.5rem;
   background: #f3f6fb;
 `;
 
-const SplitGrid = styled(Container)`
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2rem;
-  align-items: center;
-
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const Photo = styled(Image)`
+const Container = styled.div`
   width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 18px 45px rgba(10, 43, 97, 0.18);
-  border: 1px solid rgba(10, 43, 97, 0.1);
-`;
-
-const Card = styled.div`
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid rgba(10, 43, 97, 0.12);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
-  padding: 1.6rem;
-`;
-
-const H2 = styled.h2`
-  font-size: 1.85rem;
-  line-height: 1.12;
-  margin-bottom: 0.75rem;
-  color: #0a2b61;
-`;
-
-const P = styled.p`
-  color: #2f3640;
-  line-height: 1.55;
-`;
-
-const Results = styled(Section)`
-  background: #153a86;
-  padding: 0;
-`;
-
-const ResultsInner = styled(Container)`
-  padding: 0;
-  max-width: 1024px;
-`;
-
-const ResultsImage = styled(Image)`
-  width: 100%;
-  height: auto;
-  display: block;
-`;
-
-const ResultsActions = styled(Container)`
-  padding-top: 0.85rem;
-  padding-bottom: 1.35rem;
-  display: flex;
-  justify-content: flex-end;
-
-  @media (max-width: 960px) {
-    justify-content: center;
-  }
-`;
-
-const Priorities = styled(Section)`
-  padding: 2.25rem 0 2.6rem;
-  background: #f3f6fb;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
 `;
 
 const PrioritiesHeader = styled(Container)`
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 `;
 
-const PrioritiesTitle = styled.h3`
-  font-size: 2rem;
+const Accent = styled.div`
+  width: 4px;
+  height: 2.2rem;
+  border-radius: 2px;
+  background: #0a2b61;
+  flex-shrink: 0;
+`;
+
+const SectionLabel = styled.div`
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(10, 43, 97, 0.48);
+  margin-bottom: 0.2rem;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 1.65rem;
+  font-weight: 800;
   color: #0a2b61;
+  margin: 0;
+  line-height: 1.2;
 `;
 
 const Grid = styled(Container)`
@@ -237,22 +155,31 @@ const Grid = styled(Container)`
 const PriorityCard = styled.div`
   background: #fff;
   border-radius: 14px;
-  border: 1px solid rgba(10, 43, 97, 0.12);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
-  padding: 1.15rem 1.15rem 1.25rem;
-  min-height: 170px;
-  display: grid;
+  border: 1px solid rgba(10, 43, 97, 0.1);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
   gap: 0.6rem;
+  transition:
+    box-shadow 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    box-shadow: 0 14px 38px rgba(10, 43, 97, 0.13);
+    transform: translateY(-2px);
+  }
 `;
 
 const PriorityIcon = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  background: rgba(10, 43, 97, 0.08);
+  background: #0a2b61;
   display: grid;
   place-items: center;
-  color: #0a2b61;
+  color: #fff;
+  flex-shrink: 0;
 
   svg {
     width: 22px;
@@ -261,122 +188,57 @@ const PriorityIcon = styled.div`
 `;
 
 const PriorityTitle = styled.div`
-  font-weight: 900;
+  font-weight: 800;
+  font-size: 0.95rem;
   color: #0a2b61;
+  line-height: 1.3;
 `;
 
 const PriorityText = styled.div`
   color: #2f3640;
-  line-height: 1.45;
-  font-size: 0.95rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
 `;
 
-const Join = styled(Section)`
-  background: linear-gradient(180deg, #0a2b61 0%, #06224e 100%);
-  color: #fff;
-  padding: 2.25rem 0;
-`;
-
-const JoinGrid = styled(Container)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-`;
-
-const JoinTitle = styled.h3`
-  font-size: 2rem;
-`;
-
-const AmountRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-`;
-
-const AmountButton = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
-  min-width: 74px;
-  padding: 0 0.9rem;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #0a2b61;
-  background: #fff;
-  font-weight: 900;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
-  transition:
-    transform 140ms ease,
-    box-shadow 140ms ease;
-
-  &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-  }
-`;
+/* ─── Page Component ─────────────────────────────────── */
 
 export default function HomePage() {
   return (
     <Page>
+      {/* ── Hero ── */}
       <Hero>
         <HeroInner>
-          <HeroBanner>
-            <HeroBannerImage
-              src="/home-hero-hd.jpg"
-              alt="Raymond Liu — CA State Senate District 10"
-              width={2048}
-              height={1092}
-              priority
-              sizes="(max-width: 1024px) 100vw, 1024px"
-            />
-          </HeroBanner>
-        </HeroInner>
-      </Hero>
-
-      <Split>
-        <SplitGrid>
-          <Photo
-            src="/home-small-logo.jpg"
-            alt="Raymond Liu"
-            width={975}
-            height={650}
-            sizes="(max-width: 960px) 100vw, 50vw"
-          />
-          <Card>
-            <H2>A New Generation of Leadership</H2>
-            <P>
-              Raymond Liu is running to bring practical leadership, integrity,
-              and real solutions to our community. As a lifelong resident, he
-              understands the challenges families face—rising costs,
-              opportunity, and the need for responsible leadership.
-            </P>
-          </Card>
-        </SplitGrid>
-      </Split>
-
-      <Results>
-        <ResultsInner>
-          <ResultsImage
-            src="/home-results.jpg"
-            alt="Delivering results for Fremont"
+          <HeroBannerImage
+            src="/home-hero-hd.jpg"
+            alt="Raymond Liu — CA State Senate District 10"
             width={2048}
-            height={1116}
+            height={1092}
+            priority
             sizes="(max-width: 1024px) 100vw, 1024px"
           />
-        </ResultsInner>
-      </Results>
+        </HeroInner>
+        <HeroActions>
+          <Actions>
+            <Button href="/about" $variant="ghost">
+              About Raymond
+            </Button>
+          </Actions>
+        </HeroActions>
+      </Hero>
 
+      {/* ── Priorities ── */}
       <Priorities>
         <PrioritiesHeader>
-          <PrioritiesTitle>Priorities for District 10</PrioritiesTitle>
+          <Accent aria-hidden="true" />
+          <div>
+            <SectionLabel>State Senate · District 10</SectionLabel>
+            <SectionTitle>Priorities for District 10</SectionTitle>
+          </div>
         </PrioritiesHeader>
         <Grid>
           <PriorityCard>
-            <PriorityIcon aria-hidden>
-              <BuildingOffice2Icon />
+            <PriorityIcon aria-hidden="true">
+              <BuildingLibraryIcon />
             </PriorityIcon>
             <PriorityTitle>Affordable Housing</PriorityTitle>
             <PriorityText>
@@ -384,7 +246,7 @@ export default function HomePage() {
             </PriorityText>
           </PriorityCard>
           <PriorityCard>
-            <PriorityIcon aria-hidden>
+            <PriorityIcon aria-hidden="true">
               <BriefcaseIcon />
             </PriorityIcon>
             <PriorityTitle>Small Businesses</PriorityTitle>
@@ -393,7 +255,7 @@ export default function HomePage() {
             </PriorityText>
           </PriorityCard>
           <PriorityCard>
-            <PriorityIcon aria-hidden>
+            <PriorityIcon aria-hidden="true">
               <ShieldCheckIcon />
             </PriorityIcon>
             <PriorityTitle>Public Safety</PriorityTitle>
@@ -402,8 +264,8 @@ export default function HomePage() {
             </PriorityText>
           </PriorityCard>
           <PriorityCard>
-            <PriorityIcon aria-hidden>
-              <ArrowTrendingUpIcon />
+            <PriorityIcon aria-hidden="true">
+              <ChartBarIcon />
             </PriorityIcon>
             <PriorityTitle>Economic Opportunity</PriorityTitle>
             <PriorityText>
