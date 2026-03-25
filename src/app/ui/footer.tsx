@@ -72,7 +72,7 @@ export default function Footer() {
         </LogoRow>
         <p>
           Paid for by Raymond Liu for State Senate, District 10, 2026 FPPC#
-          pending
+          1488863
         </p>
       </FooterContent>
     </FooterRoot>
