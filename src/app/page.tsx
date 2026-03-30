@@ -50,6 +50,36 @@ const Actions = styled.div`
   justify-content: center;
 `;
 
+const DonateHeroBtn = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  background: #f4c542;
+  color: #0a2b61;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+`;
+
 const Button = styled(Link)<{ $variant?: 'volunteer' | 'ghost' }>`
   display: inline-flex;
   align-items: center;
@@ -209,16 +239,23 @@ export default function HomePage() {
       <Hero>
         <HeroInner>
           <HeroBannerImage
-            src="/home-hero-hd.jpg"
+            src="/home-hero-hd.png"
             alt="Raymond Liu — CA State Senate District 10"
-            width={2048}
-            height={1092}
+            width={1067}
+            height={601}
             priority
             sizes="(max-width: 1024px) 100vw, 1024px"
           />
         </HeroInner>
         <HeroActions>
           <Actions>
+            <DonateHeroBtn
+              href="https://www.efundraisingconnections.com/c/RaymondLiu/?eid=17689"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donate Now
+            </DonateHeroBtn>
             <Button href="/about" $variant="ghost">
               About Raymond
             </Button>
