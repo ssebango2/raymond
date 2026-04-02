@@ -159,6 +159,9 @@ const Navbar = () => {
           <Link href="/endorsements">ENDORSEMENTS</Link>
         </NavItem>
         <NavItem onClick={handleLinkClick}>
+          <Link href="/get-involved">GET INVOLVED</Link>
+        </NavItem>
+        <NavItem onClick={handleLinkClick}>
           <DonateBtn
             href="https://www.efundraisingconnections.com/c/RaymondLiu/?eid=17689"
             target="_blank"

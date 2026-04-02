@@ -104,7 +104,14 @@ const Button = styled(Link)<{ $variant?: 'volunteer' | 'ghost' }>`
     border: 1px solid rgba(255,255,255,0.22);
     box-shadow: 0 8px 20px rgba(0,0,0,0.16);
   `
-      : `
+      : $variant === 'volunteer'
+        ? `
+    background: #c62828;
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    border: 1px solid rgba(255,255,255,0.14);
+  `
+        : `
     background: #c62828;
     color: #fff;
     box-shadow: 0 10px 24px rgba(0,0,0,0.22);
@@ -256,6 +263,9 @@ export default function HomePage() {
             >
               Donate Now
             </DonateHeroBtn>
+            <Button href="/get-involved" $variant="volunteer">
+              Get Involved
+            </Button>
             <Button href="/about" $variant="ghost">
               About Raymond
             </Button>
